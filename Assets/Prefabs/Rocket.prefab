@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 4082596723544572754}
   - component: {fileID: 95830366426512063}
   - component: {fileID: 2287286433647875218}
-  - component: {fileID: 8896702156449560285}
-  m_Layer: 7
-  m_Name: Bullet
+  - component: {fileID: 6030552964107205568}
+  m_Layer: 8
+  m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bd70145708a27471bbf6560b41ba5003, type: 2}
+  - {fileID: 2100000, guid: 0664e64b3df614203a8cc99d2bf50fe5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -137,7 +137,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &8896702156449560285
+--- !u!114 &6030552964107205568
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,6 +146,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2878970797454495333}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d68d6758b3ad04a7691486d36915b3d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b24bc6c107d841a6b648eabab668f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
+  explosionRadius: 5
+  explosionForce: 700

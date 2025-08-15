@@ -20,7 +20,9 @@ public class PlayerInput : MonoBehaviour
     [Header("Shooting Settings")]
     [SerializeField] private Transform firePoint;
     [SerializeField] private Rigidbody projectilePrefab;
+    [SerializeField] private Rigidbody rocketPrefab;
     [SerializeField] private float shootingForce; 
+    
 
     private CharacterController controller;
     private Camera head;
@@ -85,6 +87,11 @@ public class PlayerInput : MonoBehaviour
             Rigidbody clonedProjectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
             clonedProjectile.AddForce(firePoint.forward * shootingForce, ForceMode.Impulse);
             Destroy(clonedProjectile.gameObject, 5f); // destroy projectile after 5 seconds
+        } else if (Input.GetMouseButtonDown(1))
+        {
+            Rigidbody clonedRocket = Instantiate(rocketPrefab, firePoint.position, firePoint.rotation);
+            clonedRocket.AddForce(firePoint.forward * shootingForce, ForceMode.Impulse);
+            Destroy(clonedRocket.gameObject, 5f); // destroy rocket after 5 seconds
         }
     }
 
