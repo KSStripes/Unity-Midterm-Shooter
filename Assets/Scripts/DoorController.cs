@@ -2,24 +2,59 @@ using UnityEngine;
 
 public class DoorController : MonoBehaviour
 {
+    [SerializeField] private Animator doorAnimator; // Reference to the door's Animator component
+    [SerializeField] private MeshRenderer doorLight; // Reference to the door's light MeshRenderer
+    [SerializeField] private Material doorOnMat; // Material when the light is on
+    [SerializeField] private Material doorOffMat; // Material when the light is off
+    [SerializeField] private int doorWaitTime = 2; // Time to wait before opening the door
+    private float currentDoorWaitTime; // time player is already inside the trigger
+    private bool playerInside;
+
+
     //trigger when object with Rigidbody and colliders enters the trigger
     private void OnTriggerEnter(Collider other)
     {
-
+        if (other.CompareTag("Player"))
+        {
+            doorLight.material = doorOnMat; // light turn green
+        }
     }
 
     //trigger when object with Rigidbody and colliders exits the trigger
     private void OnTriggerExit(Collider other)
     {
-
+        if (other.CompareTag("Player"))
+        {
+            doorAnimator.SetBool("DoorOpen", false);
+            doorLight.material = doorOffMat; // light turn red
+            playerInside = false;
+            currentDoorWaitTime = 0f; // Reset wait time
+        }
     }
 
     // trigger when something is spawned within the trigger
     // called every frame that other object is still inside the trigger
     private void OnTriggerStay(Collider other)
     {
-        // Handle door opening and closing logic here
-        // For example, check for player input or proximity to the door
+        if (other.CompareTag("Player"))
+        {
+            playerInside = true;
+        }
+    }
+
+    private void Update()
+    {
+        if (currentDoorWaitTime >= doorWaitTime)
+        {
+            // Open the door
+            doorAnimator.SetBool("DoorOpen", true);
+            return; //stop counting up number
+        }
+        if (playerInside)
+        {
+            // count up the wait time
+            currentDoorWaitTime += Time.deltaTime;
+        }
     }
 
 }
