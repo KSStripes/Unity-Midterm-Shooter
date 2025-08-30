@@ -278,7 +278,8 @@ GameObject:
   - component: {fileID: 2857230931275928512}
   - component: {fileID: 1391170397826429061}
   - component: {fileID: 4084408767857296164}
-  m_Layer: 0
+  - component: {fileID: 6809520194047385149}
+  m_Layer: 11
   m_Name: ButtonBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -375,6 +376,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6809520194047385149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3250970552107082964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b641eee1c7f5402e96a254bb5c0e2cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPush:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 965495460508520443}
+        m_TargetAssemblyTypeName: Lift, Assembly-CSharp
+        m_MethodName: ToggleLift
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonRenderer: {fileID: 5451674868098732811}
+  offMat: {fileID: 2100000, guid: e4226f58b8a264c88973f61c34d6662f, type: 2}
+  selectedMat: {fileID: 2100000, guid: 99bc34f5c56e5484386e7e2ef24a89ef, type: 2}
 --- !u!1 &3640549522488768884
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +448,7 @@ GameObject:
   - component: {fileID: 393530670654324902}
   - component: {fileID: 1271313489280624338}
   - component: {fileID: 5451674868098732811}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
