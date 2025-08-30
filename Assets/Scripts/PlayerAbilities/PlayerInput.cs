@@ -66,11 +66,11 @@ public class PlayerInput : MonoBehaviour
             jumpAbility.Jump();
         }
 
-        // if (pickupAbility != null)
-        // {
-        //     pickupAbility.Pickup();
-        //     if (pickupAbility.hasHeldItem) return;
-        // }
+        if (pickupAbility != null)
+        {
+            pickupAbility.Pickup();
+            if (pickupAbility.hasHeldItem) return;
+        }
 
         if (interactAbility != null)
         {

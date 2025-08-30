@@ -255,6 +255,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 79681924755770757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5944308721530065867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3571438378540628429}
+  m_Layer: 3
+  m_Name: PickupPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3571438378540628429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5944308721530065867}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8525002457566494245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8501500028438889558
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +326,7 @@ Transform:
   m_Children:
   - {fileID: 5824290170726497958}
   - {fileID: 7880994461805068032}
+  - {fileID: 3571438378540628429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &8532450686450405470
@@ -369,11 +401,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d519d901dd52b584fb92e2161caf4a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactDistance: 5
+  interactDistance: 3
   selectableLayer:
     serializedVersion: 2
     m_Bits: 2048
   head: {fileID: 8011267569686115192}
+  buttonKey: 102
 --- !u!114 &6650324584180002368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,6 +458,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c9556ba9e09b14582124148c3a441b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachPoint: {fileID: 3571438378540628429}
+  pickupLayer:
+    serializedVersion: 2
+    m_Bits: 4096
+  head: {fileID: 8011267569686115192}
+  pickupDistance: 5
+  pickupKey: 102
 --- !u!114 &5325811135391772117
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,50 +2,51 @@ using UnityEngine;
 
 public class PickupAbility : MonoBehaviour
 {
-    // [Header("Pickup Variables")]
-    // [SerializeField] private Transform attachPoint;
-    // [SerializeField] private LayerMask pickupLayer;
-    // [SerializeField] private Camera head;
-    // [SerializeField] private float pickupDistance = 5f;
+    [Header("Pickup Variables")]
+    [SerializeField] private Transform attachPoint;
+    [SerializeField] private LayerMask pickupLayer;
+    [SerializeField] private Camera head;
+    [SerializeField] private float pickupDistance = 3f;
+    [SerializeField] private KeyCode pickupKey = KeyCode.F;
 
-    // private IPickupable heldObject;
+    private IPickupable heldObject;
 
-    // public bool hasHeldItem => heldObject != null;
+    public bool hasHeldItem => heldObject != null;
 
-    // public void Pickup()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.E))
-    //     {
-    //         if (heldObject == null)
-    //         {
-    //             TryPickup();
-    //         }
-    //         else
-    //         {
-    //             Drop();
-    //         }
-    //     }
-    // }
+    public void Pickup()
+    {
+        if (Input.GetKeyDown(pickupKey))
+        {
+            if (heldObject == null)
+            {
+                TryPickup();
+            }
+            else
+            {
+                Drop();
+            }
+        }
+    }
 
-    // private void TryPickup()
-    // {
-    //     Ray ray = head.ScreenPointToRay(Input.mousePosition);
+    private void TryPickup()
+    {
+        Ray ray = head.ScreenPointToRay(Input.mousePosition);
 
-    //     if (Physics.Raycast(ray, out RaycastHit hit, pickupDistance, pickupLayer))
-    //     {
-    //         IPickupable pick = hit.collider.GetComponent<IPickupable>();
+        if (Physics.Raycast(ray, out RaycastHit hit, pickupDistance, pickupLayer))
+        {
+            IPickupable pick = hit.collider.GetComponent<IPickupable>();
 
-    //         if (pick != null)
-    //         {
-    //             heldObject = pick;
-    //             heldObject.OnPickedUp(attachPoint);
-    //         }
-    //     }
-    // }
+            if (pick != null)
+            {
+                heldObject = pick;
+                heldObject.OnPickedUp(attachPoint);
+            }
+        }
+    }
 
-    // private void Drop()
-    // {
-    //     heldObject.OnDropped();
-    //     heldObject = null;
-    // }
+    private void Drop()
+    {
+        heldObject.OnDropped();
+        heldObject = null;
+    }
 }
