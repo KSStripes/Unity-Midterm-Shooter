@@ -7,12 +7,7 @@ public class ShootAbility : MonoBehaviour
     [SerializeField] private Transform firePoint;
     [SerializeField] private float shootingForce = 200f;
 
-    private ObjectPool bulletPool;
-
-    private void Awake()
-    {
-        bulletPool = FindAnyObjectByType<ObjectPool>();
-    }
+    [SerializeField] private ObjectPool bulletPool;
 
     public void Shoot()
     {
@@ -26,8 +21,6 @@ public class ShootAbility : MonoBehaviour
         
         clonedProjectile.position = firePoint.position;
         clonedProjectile.rotation = firePoint.rotation;
-        clonedProjectile.GetComponentInChildren<TrailRenderer>().emitting = true;
-        clonedProjectile.GetComponentInChildren<TrailRenderer>().Clear();
         clonedProjectile.AddForce(firePoint.forward * shootingForce);
     }
 
