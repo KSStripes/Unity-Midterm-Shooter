@@ -44,8 +44,5 @@ public class EnemyAttackState : EnemyState
         {
             _enemy.ChangeState(new EnemyPatrolState(_enemy));
         }
-
-
-
     }
 }

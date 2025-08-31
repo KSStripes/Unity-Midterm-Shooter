@@ -8,28 +8,28 @@ public class AttackAbility : MonoBehaviour
     private bool _isAttacking;
     private float _attackTimer;
 
-    //private HealthSystem target;
+    private HealthSystem target;
 
     private void Update()
     {
-        // if (_isAttacking)
-        // {
-        //     _attackTimer += Time.deltaTime;
-        //     if (_attackTimer >= _attackCooldown)
-        //     {
-        //         Attack();
-        //         _attackTimer = 0;
-        //     }
-        // }
+        if (_isAttacking)
+        {
+            _attackTimer += Time.deltaTime;
+            if (_attackTimer >= _attackCooldown)
+            {
+                Attack();
+                _attackTimer = 0;
+            }
+        }
     }
 
-    // public void Attack()
-    // {
-    //     if(target)
-    //     {
-    //         target.DecreaseHealth(_damage);
-    //     }
-    // }
+    public void Attack()
+    {
+        if(target)
+        {
+            target.DecreaseHealth(_damage);
+        }
+    }
 
 
     public void StartAttack(Transform _target)

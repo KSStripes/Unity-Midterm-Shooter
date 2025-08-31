@@ -18,7 +18,7 @@ public class HealthSystem : MonoBehaviour
 
     private void Update()
     {
-        //DecreaseHealth(0.05f);
+        DecreaseHealth(0.05f);
     }
 
     public float GetCurrentHealth()
@@ -45,7 +45,7 @@ public class HealthSystem : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-       //OnHealthChanged?.Invoke(currentHealth);
+        OnHealthChanged?.Invoke(currentHealth);
 
         if(currentHealth <= 0 && !isDead)
         {
