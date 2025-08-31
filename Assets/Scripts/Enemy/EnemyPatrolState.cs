@@ -20,6 +20,7 @@ public class EnemyPatrolState : EnemyState
         Debug.Log("Exit Patrol State");
     }
 
+    // functionality whilst enemy is patrolling
     public override void OnStateUpdate()
     {
         if (_enemy._agent.remainingDistance < 2.1f)

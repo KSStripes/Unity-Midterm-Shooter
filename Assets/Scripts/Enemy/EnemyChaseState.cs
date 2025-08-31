@@ -14,9 +14,10 @@ public class EnemyChaseState : EnemyState
         Debug.Log("Exiting Chase State");
     }
 
+    // functionality whilst enemy is chasing
     public override void OnStateUpdate()
     {
-        if(_enemy._player != null)
+        if (_enemy._player != null)
         {
             if (Physics.Linecast(_enemy._enemyEyes.position, _enemy._player.position + (Vector3.up * 0.5f), out RaycastHit info))
             {
@@ -34,7 +35,7 @@ public class EnemyChaseState : EnemyState
             float distanceToPlayer = Vector3.Distance(_enemy.transform.position, _enemy._player.position);
 
 
-            if(distanceToPlayer < _enemy._attackRange)
+            if (distanceToPlayer < _enemy._attackRange)
             {
                 _enemy.ChangeState(new EnemyAttackState(_enemy));
             }
