@@ -9,8 +9,6 @@ public class PooledBullet : PooledObject
         if (collision.gameObject.TryGetComponent(out IDestroyable destroy))
         {
             destroy.OnCollided();
-
-
             linkedPool.ResetBullet(this);
         }
     }

@@ -77,9 +77,9 @@ public class PlayerInput : MonoBehaviour
             interactAbility.Interact();
         }
 
-        // if (Input.GetMouseButtonDown(0) && baseShootAbility != null)
-        // {
-        //     baseShootAbility.Shoot();
-        // }
+        if (Input.GetMouseButtonDown(0) && baseShootAbility != null)
+        {
+            baseShootAbility.Shoot();
+        }
     }
 }

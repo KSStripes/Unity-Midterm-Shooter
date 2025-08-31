@@ -4,12 +4,40 @@ using UnityEngine;
 public class ShootAbility : MonoBehaviour
 {
     [Header("Shooting Settings")]
-    [SerializeField] private Transform _firePoint;
-    public Transform firePoint => _firePoint;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private float shootingForce = 200f;
+
+    private ObjectPool bulletPool;
+
+    private void Awake()
+    {
+        bulletPool = FindAnyObjectByType<ObjectPool>();
+    }
+
+    public void Shoot()
+    {
+        Rigidbody clonedProjectile = bulletPool.RetrieveAvailableBullet().GetRigidbody();
+
+        if (clonedProjectile == null)
+        {
+            Debug.LogError("No projectile available in the pool!");
+            return;
+        }
+
+        clonedProjectile.position = firePoint.position;
+        clonedProjectile.rotation = firePoint.rotation;
+
+        clonedProjectile.AddForce(firePoint.forward * shootingForce);
+    }
 
 
-    [SerializeField] private float _shootingForce;
-    public float GetShootForce() => _shootingForce;
+
+    // [SerializeField] private Transform _firePoint;
+    // public Transform firePoint => _firePoint;
+
+
+    // [SerializeField] private float _shootingForce;
+    // public float GetShootForce() => _shootingForce;
 
 
     // [Header("Object Pools")]
