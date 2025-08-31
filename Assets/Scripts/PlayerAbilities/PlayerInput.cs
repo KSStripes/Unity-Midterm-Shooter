@@ -7,8 +7,6 @@ public class PlayerInput : MonoBehaviour
     public static PlayerInput Instance;
 
 
-
-
     [Header("Abilities")]
     [SerializeField] private MoveAbility moveAbility;
     [SerializeField] private LookAbility lookAbility;
@@ -30,7 +28,8 @@ public class PlayerInput : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
 
-        if(Instance == null) 
+        // Singleton pattern implementation - only one player at a time
+        if (Instance == null)
         {
             Instance = this;
         }
