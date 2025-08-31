@@ -16,10 +16,10 @@ public class HealthSystem : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    private void Update()
-    {
-        DecreaseHealth(0.05f);
-    }
+    // private void Update()
+    // {
+    //     DecreaseHealth(0.05f);
+    // }
 
     public float GetCurrentHealth()
     {

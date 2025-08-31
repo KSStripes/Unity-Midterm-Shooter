@@ -34,7 +34,7 @@ public class AttackAbility : MonoBehaviour
 
     public void StartAttack(Transform _target)
     {
-        //target = _target.GetComponent<HealthSystem>();
+        target = _target.GetComponent<HealthSystem>();
         _isAttacking = true;
     }
 
