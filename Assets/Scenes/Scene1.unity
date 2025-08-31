@@ -2015,9 +2015,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 5325811135391772117, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
-      propertyPath: bulletPool
+      propertyPath: _bulletPool
       value: 
       objectReference: {fileID: 1263167578}
+    - target: {fileID: 5325811135391772117, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
+      propertyPath: _rocketPool
+      value: 
+      objectReference: {fileID: 1478092900}
     - target: {fileID: 8501500028438889558, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
       propertyPath: m_Name
       value: Player
