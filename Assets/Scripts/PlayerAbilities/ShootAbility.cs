@@ -23,10 +23,11 @@ public class ShootAbility : MonoBehaviour
             Debug.LogError("No projectile available in the pool!");
             return;
         }
-
+        
         clonedProjectile.position = firePoint.position;
         clonedProjectile.rotation = firePoint.rotation;
-
+        clonedProjectile.GetComponentInChildren<TrailRenderer>().emitting = true;
+        clonedProjectile.GetComponentInChildren<TrailRenderer>().Clear();
         clonedProjectile.AddForce(firePoint.forward * shootingForce);
     }
 
