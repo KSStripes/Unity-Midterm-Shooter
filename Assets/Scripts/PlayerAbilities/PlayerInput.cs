@@ -14,6 +14,7 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private ShootAbility baseShootAbility;
     [SerializeField] private InteractAbility interactAbility;
     [SerializeField] private PickupAbility pickupAbility;
+    [SerializeField] private CommanderAbility commanderAbility;
 
     [Space]
     [Header("Look Controls")]
@@ -79,6 +80,11 @@ public class PlayerInput : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && baseShootAbility != null)
         {
             baseShootAbility.Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.T) && commanderAbility != null)
+        {
+            commanderAbility.Command();
         }
     }
 }
