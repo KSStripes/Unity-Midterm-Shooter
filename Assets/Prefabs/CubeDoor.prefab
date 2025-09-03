@@ -360,7 +360,6 @@ GameObject:
   - component: {fileID: 2701941595315620538}
   - component: {fileID: 7777190623589556802}
   - component: {fileID: 7629940934058843974}
-  - component: {fileID: 3293146610497155938}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -457,28 +456,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &3293146610497155938
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3417351982703941195}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e9696e5d4649a481185a87fe70c48c5f, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4706139343835224875
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +720,7 @@ Animator:
   m_GameObject: {fileID: 5211970826043921292}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e9696e5d4649a481185a87fe70c48c5f, type: 2}
+  m_Controller: {fileID: 9100000, guid: a0de7fda0a79f4ce69b24a073a6c5dbb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
