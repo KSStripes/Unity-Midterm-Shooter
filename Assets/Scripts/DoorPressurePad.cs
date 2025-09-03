@@ -25,12 +25,13 @@ public class DoorPressurePad : MonoBehaviour
         foreach(Collider col in results)
         {
             if (col == null) continue;
+            foundCube = true;
+            break;
 
-            if(col.GetComponent<CompanionCube>() != null)
-            {
-                foundCube = true;
-                break;
-            }
+            // if (col.GetComponent<CompanionCube>() != null)
+            // {
+
+            // }
         }
 
 
