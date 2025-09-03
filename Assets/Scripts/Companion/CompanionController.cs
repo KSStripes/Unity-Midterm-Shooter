@@ -8,6 +8,13 @@ public class CompanionController : MonoBehaviour
 {
     [SerializeField] private Queue<Command> commandQueue = new Queue<Command>();
     private NavMeshAgent agent;
+    private Animator anim;
+
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        anim = GetComponentInChildren<Animator>();
+    }
 
     private void Update()
     {
@@ -21,12 +28,10 @@ public class CompanionController : MonoBehaviour
                 FinishCommand();
             }
         }
+
+        anim.SetFloat("Velocity", agent.velocity.sqrMagnitude);
     }
 
-    private void Awake()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
 
     public void GiveCommand(Command newCommand)
     {
