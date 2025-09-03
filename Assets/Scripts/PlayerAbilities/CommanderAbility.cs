@@ -12,16 +12,18 @@ public class CommanderAbility : MonoBehaviour
     {
         if (companion == null)
         {
-            companion = FindObjectOfType<CompanionController>();
+            companion = FindFirstObjectByType<CompanionController>();
         }
     }
 
     public void Command()
     {
         Ray ray = head.ScreenPointToRay(Input.mousePosition);
+
         if (Physics.Raycast(ray, out RaycastHit hit, commandRange, compatibleWithCommands))
         {
-            Instantiate(wayPointPrefab, hit.point, Quaternion.identity);
+            GameObject wayPoint = Instantiate(wayPointPrefab, hit.point, Quaternion.identity);
+            Destroy(wayPoint, 0.2f);
             companion.GiveCommand(new MoveCommand(hit.point));
         }
     }
