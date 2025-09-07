@@ -6,12 +6,12 @@ public class EnemyChaseState : EnemyState
 
     public override void OnStateEnter()
     {
-        Debug.Log("Entered Chase State");
+        //Debug.Log("Entered Chase State");
     }
 
     public override void OnStateExit()
     {
-        Debug.Log("Exiting Chase State");
+        //Debug.Log("Exiting Chase State");
     }
 
     // functionality whilst enemy is chasing
@@ -27,7 +27,7 @@ public class EnemyChaseState : EnemyState
                 }
                 else
                 {
-                    Debug.Log(info.transform.gameObject.layer);
+                    //Debug.Log(info.transform.gameObject.layer);
                     _enemy._agent.SetDestination(_enemy._player.position);
                 }
             }
@@ -54,7 +54,7 @@ public class EnemyChaseState : EnemyState
 
     private void ReturnToPatrol()
     {
-        Debug.Log("Lost Player!");
+        //Debug.Log("Lost Player!");
         _enemy.ChangeState(new EnemyPatrolState(_enemy));
     }
 }

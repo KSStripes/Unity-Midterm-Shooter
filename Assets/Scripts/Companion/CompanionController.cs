@@ -20,11 +20,11 @@ public class CompanionController : MonoBehaviour
     {
         if (commandQueue.Count > 0)
         {
-            Debug.Log("commands in queue: " + commandQueue.Count);
+            //Debug.Log("commands in queue: " + commandQueue.Count);
             commandQueue.Peek().Execute();
             if (commandQueue.Peek().IsCommandComplete())
             {
-                Debug.Log("command complete, ending");
+                //Debug.Log("command complete, ending");
                 FinishCommand();
             }
         }
