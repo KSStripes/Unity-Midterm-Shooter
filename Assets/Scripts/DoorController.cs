@@ -4,6 +4,11 @@ public class DoorController : MonoBehaviour
 {
     [SerializeField] private Animator doorAnimator; // Reference to the door's Animator component
     [SerializeField] private MeshRenderer doorLight; // Reference to the door's light MeshRenderer
+    [SerializeField] private MeshRenderer stripe1; // Reference to the door's light MeshRenderer
+    [SerializeField] private MeshRenderer stripe2; // Reference to the door's light MeshRenderer
+    [SerializeField] private MeshRenderer stripe3; // Reference to the door's light MeshRenderer
+    [SerializeField] private MeshRenderer stripe4; // Reference to the door's light MeshRenderer
+
     [SerializeField] private Material doorOnMat; // Material when the light is on
     [SerializeField] private Material doorOffMat; // Material when the light is off
     [SerializeField] private int doorWaitTime = 2; // Time to wait before opening the door
@@ -16,7 +21,12 @@ public class DoorController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            doorLight.material = doorOnMat; // light turn green
+            // turn all lights green
+            doorLight.material = doorOnMat;
+            stripe1.material = doorOnMat; 
+            stripe2.material = doorOnMat; 
+            stripe3.material = doorOnMat;
+            stripe4.material = doorOnMat; 
         }
     }
 
@@ -26,7 +36,13 @@ public class DoorController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             doorAnimator.SetBool("DoorOpen", false);
-            doorLight.material = doorOffMat; // light turn red
+            
+            // turn all lights red
+            doorLight.material = doorOffMat; 
+            stripe1.material = doorOffMat; 
+            stripe2.material = doorOffMat; 
+            stripe3.material = doorOffMat; 
+            stripe4.material = doorOffMat; 
             playerInside = false;
             currentDoorWaitTime = 0f; // Reset wait time
         }

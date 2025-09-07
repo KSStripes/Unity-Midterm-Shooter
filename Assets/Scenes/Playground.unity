@@ -921,11 +921,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4820743793333880636, guid: 302822f23668347c0811836eddadd6f7, type: 3}
   m_PrefabInstance: {fileID: 3309802290802832892}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1471133550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8501500028438889558, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
-  m_PrefabInstance: {fileID: 9031348234244313548}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1478092900 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6557717166234791169, guid: 4d4728430f66342a585064303b41e7ed, type: 3}
@@ -947,25 +942,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8525002457566494245, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
   m_PrefabInstance: {fileID: 9031348234244313548}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1682540217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1471133550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2462c7af785e64b719e153b05f02d633, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compatibleWithCommands:
-    serializedVersion: 2
-    m_Bits: 64
-  companion: {fileID: 1726716571}
-  wayPointPrefab: {fileID: 5196978398927356830, guid: d27b6b35aefe74b4991b6da07a8a7d03, type: 3}
-  head: {fileID: 1896997042}
-  commandRange: 15
 --- !u!1 &1707660820
 GameObject:
   m_ObjectHideFlags: 0
@@ -1008,11 +984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98414642429fc42e0bed97a24bfed569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!20 &1896997042 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 8011267569686115192, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
-  m_PrefabInstance: {fileID: 9031348234244313548}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1901900621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1366,10 +1337,6 @@ PrefabInstance:
     - target: {fileID: 4946187389246412382, guid: e478d0e109736456a92f2a9792dd724c, type: 3}
       propertyPath: m_Name
       value: SlidingDoor
-      objectReference: {fileID: 0}
-    - target: {fileID: 7485710794711423149, guid: e478d0e109736456a92f2a9792dd724c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2382,10 +2349,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1528694010778423313, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
-      propertyPath: commanderAbility
+    - target: {fileID: 3638737051375280779, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
+      propertyPath: companion
       value: 
-      objectReference: {fileID: 1682540217}
+      objectReference: {fileID: 1726716571}
     - target: {fileID: 5325811135391772117, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
       propertyPath: _bulletPool
       value: 
@@ -2441,10 +2408,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8501500028438889558, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
-      insertIndex: 10
-      addedObject: {fileID: 1682540217}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ba1c361c3dc44a2697551522f7131e4, type: 3}
 --- !u!1001 &9203695081063309630
 PrefabInstance:

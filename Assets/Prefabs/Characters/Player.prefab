@@ -390,6 +390,7 @@ GameObject:
   - component: {fileID: 1713529518177216530}
   - component: {fileID: 7328305712305811686}
   - component: {fileID: 5325811135391772117}
+  - component: {fileID: 3638737051375280779}
   - component: {fileID: 8189232184530478518}
   m_Layer: 3
   m_Name: Player
@@ -459,6 +460,7 @@ MonoBehaviour:
   baseShootAbility: {fileID: 5325811135391772117}
   interactAbility: {fileID: 7872094881597554360}
   pickupAbility: {fileID: 7328305712305811686}
+  commanderAbility: {fileID: 3638737051375280779}
   mouseSens: 150
 --- !u!114 &7972402694167832664
 MonoBehaviour:
@@ -569,6 +571,25 @@ MonoBehaviour:
   _bulletPool: {fileID: 0}
   _rocketPool: {fileID: 0}
   _weaponSignifier: {fileID: 1794923784888546665}
+--- !u!114 &3638737051375280779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8501500028438889558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2462c7af785e64b719e153b05f02d633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compatibleWithCommands:
+    serializedVersion: 2
+    m_Bits: 64
+  companion: {fileID: 0}
+  wayPointPrefab: {fileID: 5196978398927356830, guid: d27b6b35aefe74b4991b6da07a8a7d03, type: 3}
+  head: {fileID: 8011267569686115192}
+  commandRange: 15
 --- !u!114 &8189232184530478518
 MonoBehaviour:
   m_ObjectHideFlags: 0
