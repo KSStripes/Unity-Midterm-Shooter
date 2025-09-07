@@ -87,4 +87,10 @@ public class PlayerInput : MonoBehaviour
             commanderAbility.Command();
         }
     }
+
+    // Getter for commander ability (at a certain level)
+    public void GainCommander()
+    {
+        commanderAbility = GetComponent<CommanderAbility>();
+    }
 }
