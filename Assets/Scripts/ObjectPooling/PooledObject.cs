@@ -31,12 +31,6 @@ public class PooledObject : MonoBehaviour
             currentTimer = 0f;
             rb.linearVelocity = Vector3.zero;
             linkedPool.ResetBullet(this);
-
-            TrailRenderer trail = GetComponentInChildren<TrailRenderer>();
-            if (trail != null)
-            {
-                trail.emitting = false;
-            }
         }
     }
 

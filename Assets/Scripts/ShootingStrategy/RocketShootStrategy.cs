@@ -11,7 +11,7 @@ public class RocketShootStrategy : IShootStrategy
     {
         weaponSignifier = signifier;
         //Debug.Log("Rocket Strategy Selected");
-        weaponSignifier.GetComponent<Renderer>().material.color = Color.yellow;
+        weaponSignifier.GetComponent<Renderer>().material.color = Color.red;
     }
 
 

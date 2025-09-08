@@ -7,9 +7,11 @@ public class DestroyableObject : MonoBehaviour, IDestroyable
 
     public void OnCollided()
     {
+        // Spawn explosion effect
         if (explosionPrefab != null)
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(explosion, 5f); // Destroy explosion effect after 5 seconds
         }
         Destroy(gameObject, destroyDelay);
     }

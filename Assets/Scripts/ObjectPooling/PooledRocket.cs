@@ -13,7 +13,8 @@ public class PooledRocket : PooledObject
         // Spawn explosion effect
         if (explosionPrefab != null)
         {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(explosion, 5f); // Destroy explosion effect after 5 seconds
         }
 
         // Apply force and damage to nearby objects

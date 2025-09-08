@@ -11,7 +11,7 @@ public class BulletShootStrategy : IShootStrategy
     {
         weaponSignifier = signifier;
         //Debug.Log("Bullet Strategy Selected");
-        weaponSignifier.GetComponent<Renderer>().material.color = Color.red;
+        weaponSignifier.GetComponent<Renderer>().material.color = Color.cyan;
     }
 
 

@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f96821bbefeea864b9b418af4b8615ac, type: 2}
+  - {fileID: 2100000, guid: 54480484b04b94b0882c340085ae26a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,7 +220,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f96821bbefeea864b9b418af4b8615ac, type: 2}
+  - {fileID: 2100000, guid: 54480484b04b94b0882c340085ae26a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34fe57b4becb4835afaea958e941902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
   destroyDelay: 0.5
 --- !u!1 &729669315081595789
 GameObject:
@@ -373,7 +373,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f96821bbefeea864b9b418af4b8615ac, type: 2}
+  - {fileID: 2100000, guid: 54480484b04b94b0882c340085ae26a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34fe57b4becb4835afaea958e941902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
   destroyDelay: 0.5
 --- !u!1 &2597214320246429602
 GameObject:
@@ -526,7 +526,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0664e64b3df614203a8cc99d2bf50fe5, type: 2}
+  - {fileID: 2100000, guid: bd70145708a27471bbf6560b41ba5003, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34fe57b4becb4835afaea958e941902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
   destroyDelay: 0.5
 --- !u!1 &3494752425758263839
 GameObject:
@@ -679,7 +679,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0664e64b3df614203a8cc99d2bf50fe5, type: 2}
+  - {fileID: 2100000, guid: bd70145708a27471bbf6560b41ba5003, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34fe57b4becb4835afaea958e941902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
   destroyDelay: 0.5
 --- !u!1 &3933599813887158583
 GameObject:
@@ -832,7 +832,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f96821bbefeea864b9b418af4b8615ac, type: 2}
+  - {fileID: 2100000, guid: 54480484b04b94b0882c340085ae26a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -985,7 +985,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0664e64b3df614203a8cc99d2bf50fe5, type: 2}
+  - {fileID: 2100000, guid: bd70145708a27471bbf6560b41ba5003, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1069,7 +1069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34fe57b4becb4835afaea958e941902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
   destroyDelay: 0.5
 --- !u!1 &6478571367079710142
 GameObject:
@@ -1095,7 +1095,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6478571367079710142}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.2985487, y: -2.5572662, z: 2.9461448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1178,7 +1178,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f96821bbefeea864b9b418af4b8615ac, type: 2}
+  - {fileID: 2100000, guid: 54480484b04b94b0882c340085ae26a0, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1262,7 +1262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34fe57b4becb4835afaea958e941902, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 0}
+  explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
   destroyDelay: 0.5
 --- !u!1 &7202081092390766381
 GameObject:
