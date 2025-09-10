@@ -11,27 +11,32 @@ public class PooledRocket : PooledObject
     private void OnCollisionEnter(Collision collision)
     {
         // Spawn explosion effect
-        if (explosionPrefab != null)
+        if (explosionPrefab)
         {
-            GameObject explosion = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-            Destroy(explosion, 5f); // Destroy explosion effect after 5 seconds
+            var vfx = Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(vfx, 5f);
         }
 
-        // Apply force and damage to nearby objects
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
-        foreach (Collider nearbyObject in colliders)
+        var go = collision.collider.gameObject;
+
+        // Allow collider-on-child, script-on-parent setups
+        IDestroyable destroy = go.GetComponentInParent<IDestroyable>();
+        if (destroy != null)
         {
-            if (nearbyObject.TryGetComponent(out Rigidbody rb))
-            {
-                rb.AddExplosionForce(explosionForce, transform.position, explosionRadius);
-            }
-            if (nearbyObject.TryGetComponent(out IDestroyable destroy))
-            {
-                destroy.OnCollided();
-            }
+            destroy.OnCollided();
+            linkedPool.ResetBullet(this);   // return rocket to pool 
+            return;
         }
 
-        // Delay destruction so explosion effect is visible
-        Destroy(gameObject, destroyDelay);
+        Target target = go.GetComponentInParent<Target>();
+        if (target != null)
+        {
+            target.HitTarget();
+            linkedPool.ResetBullet(this);
+            return;
+        }
+
+        // If it hit something else, still recycle
+        linkedPool.ResetBullet(this);
     }
 }

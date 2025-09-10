@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2989965132290098397}
   - component: {fileID: 5019287269421525823}
   - component: {fileID: 3894838518312848783}
-  m_Layer: 9
+  m_Layer: 10
   m_Name: DoorObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 6404811837036538788, guid: 56c9af656439544d9b79d714d86ec3a2, type: 3}
-  destroyDelay: 0.5
+  destroyDelay: 0.25
 --- !u!65 &3894838518312848783
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3759072668663757817, guid: d4ca6330598b7984ca075683684f0872, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4669955612368621499, guid: d4ca6330598b7984ca075683684f0872, type: 3}
       propertyPath: m_LocalScale.x
@@ -517,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3759072668663757817, guid: d4ca6330598b7984ca075683684f0872, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4669955612368621499, guid: d4ca6330598b7984ca075683684f0872, type: 3}
       propertyPath: m_LocalScale.x
