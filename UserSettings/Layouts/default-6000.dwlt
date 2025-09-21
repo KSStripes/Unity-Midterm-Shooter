@@ -38,8 +38,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 1750
-    y: -797
+    x: 967
+    y: -1318
     width: 1161
     height: 696
   m_ShowMode: 0
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 299
-    y: -1605
+    x: 85
+    y: -1649
     width: 2023
     height: 1567
   m_ShowMode: 4
@@ -401,7 +401,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 158
+  controlID: 206
   draggingID: 0
 --- !u!114 &17
 MonoBehaviour:
@@ -1233,9 +1233,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -41.17568, y: 2.0699997, z: -4.285368}
+    m_Target: {x: -20.172747, y: 0.16964403, z: 26.642138}
     speed: 2
-    m_Value: {x: -41.17568, y: 2.0699997, z: -4.285368}
+    m_Value: {x: -20.172747, y: 0.16964403, z: 26.642138}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1281,13 +1281,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.02646573, y: -0.48360744, z: 0.014771425, w: 0.8748856}
+    m_Target: {x: 0.03216358, y: -0.5736928, z: 0.022590335, w: 0.8182633}
     speed: 2
-    m_Value: {x: -0.026465733, y: 0.48360744, z: -0.014771425, w: -0.8748856}
+    m_Value: {x: -0.03216358, y: 0.5736928, z: -0.022590337, w: -0.8182633}
   m_Size:
-    m_Target: 6.339058
+    m_Target: 6.7586713
     speed: 2
-    m_Value: 6.339058
+    m_Value: 6.7586713
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1359,7 +1359,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 642bfcff682bfcff742bfcffda2cfcffd82ffcff9030fcffa230fcffac30fcffae30fcfff851fcff2c55fcff6455fcff3256fcff2e57fcffe657fcff5c61fcff2865fcff7666fcff0e67fcffb467fcff7870fcff7093fcff3c97fcff189afcff949dfcffe86cfdff4e6dfdffc46dfdff2a6efdff0871fdff1c71fdff3881fdff4e81fdff5486fdff5886fdffa887fdffb488fdffb688fdfff292fdffe2fffdffae03feffe404feffda0afeffd015feff7ebefefff8c5fefffcc6feff20fbffff080501006c8c0100d26e0200aa7102009a910200b6910200c6910200d2910200e6910200
+      m_ExpandedIDs: 90e6ffff14e7ffffe4ebffffe8ebffffecf7ffff82f8ffff20fbffff40a8000050a80000d2a80000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1431,7 +1431,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/PlaygroundAssets/Room3_TVs
+    - Assets/Game Architecture Assets/3D Models/Guns - kenney.nl
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1441,16 +1441,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs/PlaygroundAssets/Room3_TVs
+  - Assets/Game Architecture Assets/3D Models/Guns - kenney.nl
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/kristin/Unity/Midterm_Shooter/Unity-Midterm-Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 55}
-    m_SelectedIDs: 66d20100
-    m_LastClickedID: 119398
-    m_ExpandedIDs: 0000000006b6000008b600000ab600000cb600000eb6000010b6000012b6000014b6000016b6000018b600001ab600001cb600001eb6000020b6000022b6000024b6000026b6000028b600002ab600002cb600002eb6000030b6000032b6000034b6000036b6000038b600003ab600003cb600003eb6000040b6000042b6000044b60000
+    scrollPos: {x: 0, y: 7}
+    m_SelectedIDs: fac20000
+    m_LastClickedID: 49914
+    m_ExpandedIDs: 00000000fec1000000c2000002c2000004c2000006c2000008c200000ac200000cc200000ec2000010c2000012c2000014c2000016c2000018c200001ac200001cc200001ec2000020c2000022c2000024c2000026c2000028c200002ac200002cc200002ec2000030c2000032c2000034c2000036c2000038c200003ac200003cc20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1479,7 +1479,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000006b6000008b600000ab600000cb600000eb6000010b6000012b6000014b6000016b6000018b600001ab600001cb600001eb6000020b6000022b6000024b6000026b6000028b600002ab600002cb600002eb6000030b6000032b6000034b6000036b6000038b600003ab600003cb600003eb6000040b6000042b6000044b60000
+    m_ExpandedIDs: 00000000fec1000000c2000002c2000004c2000006c2000008c200000ac200000cc200000ec2000010c2000012c2000014c2000016c2000018c200001ac200001cc200001ec2000020c2000022c2000024c2000026c2000028c200002ac200002cc200002ec2000030c2000032c2000034c2000036c2000038c200003ac200003cc20000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1507,8 +1507,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c6230000c0b7000040b5000042b500003eb5000048b5000008cb000014cb000074ac00002c0a01007acd0000f0c001003ced0000
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c6230000c0b7000040b5000042b500003eb5000048b5000008cb000014cb000074ac00002c0a01007acd0000f0c001003ced000094a90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
