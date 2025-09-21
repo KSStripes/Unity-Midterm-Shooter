@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6141411148716303124}
   - component: {fileID: 6778911664173015246}
   m_Layer: 0
-  m_Name: TV_Wall
+  m_Name: TV_Wall_animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

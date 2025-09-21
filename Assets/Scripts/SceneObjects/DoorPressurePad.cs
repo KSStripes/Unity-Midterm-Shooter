@@ -27,11 +27,6 @@ public class DoorPressurePad : MonoBehaviour
             if (col == null) continue;
             foundCube = true;
             break;
-
-            // if (col.GetComponent<CompanionCube>() != null)
-            // {
-
-            // }
         }
 
 

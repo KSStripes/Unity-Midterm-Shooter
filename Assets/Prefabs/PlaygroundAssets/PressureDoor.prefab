@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 8756171435813752094}
   - component: {fileID: 3836785083137399532}
   m_Layer: 0
-  m_Name: CubeDoor
+  m_Name: PressureDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
