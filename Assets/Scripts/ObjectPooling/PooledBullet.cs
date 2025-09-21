@@ -13,10 +13,11 @@ public class PooledBullet : PooledObject
         }
 
         // Check if the collided object is part of the target sequence puzzle
-        else if (collision.gameObject.GetComponentInParent<SequenceTarget>() is SequenceTarget seq)
+        else if (collision.gameObject.TryGetComponent(out SequenceTarget seq))
         {
-            seq.RegisterHit();
-            linkedPool.ResetBullet(this);
+            seq.RegisterHit(); //Register target hit in sequence
+            //Debug.Log($"Bullet hit sequence target '{seq.name}'");
+            linkedPool.ResetBullet(this); // return bullet to pool
         }
 
         // Check if the collided object is the target

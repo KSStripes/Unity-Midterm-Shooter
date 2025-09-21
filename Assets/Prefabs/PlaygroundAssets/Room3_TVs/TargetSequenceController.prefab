@@ -50,7 +50,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  onSequenceCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+  onProgressAdvanced:
+    m_PersistentCalls:
+      m_Calls: []
+  onWrongHit:
+    m_PersistentCalls:
+      m_Calls: []
   doorAnimator: {fileID: 0}
   doorLight: {fileID: 0}
   doorOnMat: {fileID: 2100000, guid: 99bc34f5c56e5484386e7e2ef24a89ef, type: 2}
-  doorOffMat: {fileID: 2100000, guid: e4226f58b8a264c88973f61c34d6662f, type: 2}
