@@ -1,76 +1,96 @@
 using UnityEngine;
+using UnityEngine.AI; // for NavMeshObstacle
 
 public class DoorController : MonoBehaviour
 {
-    [SerializeField] private Animator doorAnimator; // Reference to the door's Animator component
-    [SerializeField] private MeshRenderer doorLight; // Reference to the door's light MeshRenderer
-    [SerializeField] private MeshRenderer stripe1; // Reference to the door's light MeshRenderer
-    [SerializeField] private MeshRenderer stripe2; // Reference to the door's light MeshRenderer
-    [SerializeField] private MeshRenderer stripe3; // Reference to the door's light MeshRenderer
-    [SerializeField] private MeshRenderer stripe4; // Reference to the door's light MeshRenderer
+    [Header("Door visuals")]
+    [SerializeField] private Animator doorAnimator;         // Animator with bool "DoorOpen"
+    [SerializeField] private MeshRenderer doorLight;
+    [SerializeField] private MeshRenderer stripe1;
+    [SerializeField] private MeshRenderer stripe2;
+    [SerializeField] private MeshRenderer stripe3;
+    [SerializeField] private MeshRenderer stripe4;
 
-    [SerializeField] private Material doorOnMat; // Material when the light is on
-    [SerializeField] private Material doorOffMat; // Material when the light is off
-    [SerializeField] private int doorWaitTime = 2; // Time to wait before opening the door
-    private float currentDoorWaitTime; // time player is already inside the trigger
+    [SerializeField] private Material doorOnMat;            // green
+    [SerializeField] private Material doorOffMat;           // red
+
+    [Header("Open logic")]
+    [SerializeField] private int doorWaitTime = 2;          // seconds player must stay in trigger
+    private float currentDoorWaitTime;
     private bool playerInside;
 
+    [Header("NavMesh blocking (no setup needed)")]
+    [SerializeField] private string doorOpenParam = "DoorOpen"; // animator bool name
+    private NavMeshObstacle navObstacle; // auto-found
+    [SerializeField] private bool doorStartsOpen = false;         // set to true if scene starts open
 
-    //trigger when object with Rigidbody and colliders enters the trigger
+    void Awake()
+    {
+        // Auto-find an obstacle on this object or child objects
+        navObstacle = GetComponentInChildren<NavMeshObstacle>(true);
+        if (navObstacle)
+        {
+            navObstacle.carving = true;
+            navObstacle.carveOnlyStationary = true;
+
+            // Initialize obstacle state from starting door state
+            bool open = doorAnimator ? doorAnimator.GetBool(doorOpenParam) : doorStartsOpen;
+            navObstacle.enabled = !open; // closed => enabled (blocks), open => disabled
+        }
+    }
+
+    // ---- Trigger handling ----
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            // turn all lights green
-            doorLight.material = doorOnMat;
-            stripe1.material = doorOnMat; 
-            stripe2.material = doorOnMat; 
-            stripe3.material = doorOnMat;
-            stripe4.material = doorOnMat; 
-        }
+        if (!other.CompareTag("Player")) return;
+        SetLightMaterial(doorOnMat);
     }
 
-    //trigger when object with Rigidbody and colliders exits the trigger
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            doorAnimator.SetBool("DoorOpen", false);
-            
-            // turn all lights red
-            doorLight.material = doorOffMat; 
-            stripe1.material = doorOffMat; 
-            stripe2.material = doorOffMat; 
-            stripe3.material = doorOffMat; 
-            stripe4.material = doorOffMat; 
-            playerInside = false;
-            currentDoorWaitTime = 0f; // Reset wait time
-        }
+        if (!other.CompareTag("Player")) return;
+
+        SetDoorOpen(false);           // start closing
+        SetLightMaterial(doorOffMat); // lights red
+        playerInside = false;
+        currentDoorWaitTime = 0f;
     }
 
-    // trigger when something is spawned within the trigger
-    // called every frame that other object is still inside the trigger
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
             playerInside = true;
-        }
     }
 
     private void Update()
     {
         if (currentDoorWaitTime >= doorWaitTime)
         {
-            // Open the door
-            doorAnimator.SetBool("DoorOpen", true);
-            return; //stop counting up number
+            SetDoorOpen(true); // open once the wait time is reached
+            return;
         }
+
         if (playerInside)
-        {
-            // count up the wait time
             currentDoorWaitTime += Time.deltaTime;
-        }
     }
 
+    // ---- Helpers ----
+    private void SetLightMaterial(Material material)
+    {
+        if (doorLight) doorLight.material = material;
+        if (stripe1)   stripe1.material = material;
+        if (stripe2)   stripe2.material = material;
+        if (stripe3)   stripe3.material = material;
+        if (stripe4)   stripe4.material = material;
+    }
+
+    private void SetDoorOpen(bool open)
+    {
+        // Drive the animator
+        if (doorAnimator) doorAnimator.SetBool(doorOpenParam, open);
+
+        // Toggle NavMesh blocking (open => allow path, closed => block path)
+        if (navObstacle)
+            navObstacle.enabled = !open;
+    }
 }

@@ -290,6 +290,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlidingDoor_Section5
       objectReference: {fileID: 0}
+    - target: {fileID: 4946187389246412382, guid: e478d0e109736456a92f2a9792dd724c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1233,6 +1237,67 @@ Transform:
   - {fileID: 722630705}
   m_Father: {fileID: 1020564976}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &564289888
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2048313788867743440, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_NavMeshData
+      value: 
+      objectReference: {fileID: 23800000, guid: 42d589d4d52fd40d7a89d698ae6e70ec, type: 2}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.411102
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.7434464
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.210604
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6409833927796366351, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8223062303217785864, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
+      propertyPath: m_Name
+      value: NavMeshSurface
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2e40b6ba3c88b4264ae0238eb812a60d, type: 3}
 --- !u!114 &573809509 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 365956568714131841, guid: 316e62f88cc61407d9bb322d78d4df7b, type: 3}
@@ -3460,6 +3525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PressureDoor
       objectReference: {fileID: 0}
+    - target: {fileID: 5211970826043921292, guid: 302822f23668347c0811836eddadd6f7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5689271758058241861, guid: 302822f23668347c0811836eddadd6f7, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -5146,6 +5215,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 70412066}
   - {fileID: 1749717458}
+  - {fileID: 564289888}
   - {fileID: 1567097015}
   - {fileID: 2137438620}
   - {fileID: 2118362528}
