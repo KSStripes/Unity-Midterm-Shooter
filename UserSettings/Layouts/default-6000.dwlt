@@ -38,8 +38,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 967
-    y: -1318
+    x: 1712
+    y: -856
     width: 1161
     height: 696
   m_ShowMode: 0
@@ -62,12 +62,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 85
-    y: -1649
+    x: 73
+    y: -1645
     width: 2023
     height: 1567
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Scene
   m_RootView: {fileID: 8}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 99
+  controlID: 143
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -295,7 +295,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 100
+  controlID: 144
   draggingID: 0
 --- !u!114 &13
 MonoBehaviour:
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 101
+  controlID: 145
   draggingID: 0
 --- !u!114 &14
 MonoBehaviour:
@@ -1233,9 +1233,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -20.172747, y: 0.16964403, z: 26.642138}
+    m_Target: {x: 49.044193, y: -5.1552362, z: 69.96796}
     speed: 2
-    m_Value: {x: -20.172747, y: 0.16964403, z: 26.642138}
+    m_Value: {x: 49.044193, y: -5.1552362, z: 69.96796}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1281,13 +1281,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.03216358, y: -0.5736928, z: 0.022590335, w: 0.8182633}
+    m_Target: {x: 0.024543237, y: 0.8543668, z: -0.51774955, w: 0.040991046}
     speed: 2
-    m_Value: {x: -0.03216358, y: 0.5736928, z: -0.022590337, w: -0.8182633}
+    m_Value: {x: 0.024543237, y: 0.8543668, z: -0.51774955, w: 0.040991046}
   m_Size:
-    m_Target: 6.7586713
+    m_Target: 22.779621
     speed: 2
-    m_Value: 6.7586713
+    m_Value: 22.779621
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1359,7 +1359,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 90e6ffff14e7ffffe4ebffffe8ebffffecf7ffff82f8ffff20fbffff40a8000050a80000d2a80000
+      m_ExpandedIDs: 608efdffdea2fdffe6a2fdff5ea3fdff66a3fdff8eb4fdffc8b5fdff54b9fdff82a6feffaaa6feffd2a6fefffaa6feff22a7feff4aa7feff72a7feff9aa7feff2caffeffd0b9feff26d0feff18d6feff8cd7feffe0dffeffa498ffffae98ffffa6aaffff8ee7ffff64e8ffffeaeaffffacebffff08f2ffff82f8ffff20fbffff50a80000007d0100f607020042080200
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1431,7 +1431,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Game Architecture Assets/3D Models/Guns - kenney.nl
+    - Assets/UnityAssets/ParticlePack/EffectExamples/Fire & Explosion Effects/Prefabs
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1441,16 +1441,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Game Architecture Assets/3D Models/Guns - kenney.nl
+  - Assets/UnityAssets/ParticlePack/EffectExamples/Fire & Explosion Effects/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/kristin/Unity/Midterm_Shooter/Unity-Midterm-Shooter
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 7}
-    m_SelectedIDs: fac20000
-    m_LastClickedID: 49914
-    m_ExpandedIDs: 00000000fec1000000c2000002c2000004c2000006c2000008c200000ac200000cc200000ec2000010c2000012c2000014c2000016c2000018c200001ac200001cc200001ec2000020c2000022c2000024c2000026c2000028c200002ac200002cc200002ec2000030c2000032c2000034c2000036c2000038c200003ac200003cc20000
+    scrollPos: {x: 0, y: 424.00024}
+    m_SelectedIDs: d0a20100
+    m_LastClickedID: 107216
+    m_ExpandedIDs: 000000002cc500002ec5000030c5000032c5000034c5000036c5000038c500003ac500003cc500003ec5000040c5000042c5000044c5000046c5000048c500004ac500004cc500004ec5000050c5000052c5000054c5000056c5000058c500005ac500005cc500005ec5000060c5000062c5000064c5000066c5000068c500006ac500006cc500006ec5000070c5000072c5000074c50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1479,7 +1479,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fec1000000c2000002c2000004c2000006c2000008c200000ac200000cc200000ec2000010c2000012c2000014c2000016c2000018c200001ac200001cc200001ec2000020c2000022c2000024c2000026c2000028c200002ac200002cc200002ec2000030c2000032c2000034c2000036c2000038c200003ac200003cc20000
+    m_ExpandedIDs: 000000002cc500002ec5000030c5000032c5000034c5000036c5000038c500003ac500003cc500003ec5000040c5000042c5000044c5000046c5000048c500004ac500004cc500004ec5000050c5000052c5000054c5000056c5000058c500005ac500005cc500005ec5000060c5000062c5000064c5000066c5000068c500006ac500006cc500006ec5000070c5000072c5000074c50000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000c0b7000040b5000042b500003eb5000048b5000008cb000014cb000074ac00002c0a01007acd0000f0c001003ced000094a90000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
