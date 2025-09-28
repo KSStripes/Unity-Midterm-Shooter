@@ -73,13 +73,16 @@ public class UIController : MonoBehaviour
     private void DisplayDeathScreen()
     {
         Debug.Log("Player has Died");
-
         // Show a death message on the bottom bar
-        if (hud)
-        {
-            hud.ShowAuto(deathMsgText, deathMsgSeconds);
-        }
+        if(hud) hud.ShowAuto(deathMsgText, deathMsgSeconds);
     }
+
+    // Show game state change message in UI, activated by StateChangeTrigger
+    public void ShowStateChangeUI(GameState state, float seconds = 1.8f)
+    {
+        if(hud) hud.ShowAuto($"Entering {state}", seconds);
+    }
+
 
     // Vignette screen based on damage taken
     private void ChangeDamageEffect()

@@ -9,7 +9,7 @@ onBoardingDoNotAskAgain = true
 showPackageIndexes = false
 showStatusBar = false
 scopes = {
-	"last_search.66F56946" = "animation"
+	"last_search.66F56946" = "messagecollider"
 	"OpenInspectorPreview.66F56946" = "0"
 	"currentGroup.66F56946" = ""
 }
@@ -68,6 +68,8 @@ providers = {
 objectSelectors = {
 }
 recentSearches = [
+	"messagecollider"
+	"message"
 	"animation"
 	"ani"
 	"timeline"

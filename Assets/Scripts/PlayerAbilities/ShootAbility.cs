@@ -23,6 +23,8 @@ public class ShootAbility : MonoBehaviour
     private IShootStrategy _currentShootingStrategy;
 
     public Action<int> OnChangeStrategy;
+    [SerializeField] private bool rocketUnlocked = false; // disable rocket shooting at start
+    public void UnlockRocket() => rocketUnlocked = true; // method to call from StateChangeTrigger
 
     private void Start()
     {
@@ -41,8 +43,16 @@ public class ShootAbility : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            _currentShootingStrategy = new RocketShootStrategy(_weaponSignifier);
-            OnChangeStrategy?.Invoke(1);
+            if (rocketUnlocked)
+            {
+                _currentShootingStrategy = new RocketShootStrategy(_weaponSignifier);
+                OnChangeStrategy?.Invoke(1);
+            }
+            else
+            {
+                Debug.Log("Rocket not unlocked yet!");
+                // Could play an error sound here
+            }
         }
     }
 
