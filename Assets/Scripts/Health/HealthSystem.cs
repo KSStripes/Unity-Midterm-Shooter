@@ -16,27 +16,16 @@ public class HealthSystem : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // private void Update()
-    // {
-    //     DecreaseHealth(0.05f);
-    // }
-
-    public float GetCurrentHealth()
-    {
-        return currentHealth;
-    }
-
-    public float GetMaxHealth()
-    {
-        return maxHealth;
-    }
+    public float GetCurrentHealth() => currentHealth;
+    public float GetMaxHealth() => maxHealth;  
 
     public void IncreaseHealth(float amount)
     {
         currentHealth += amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        OnHealthChanged?.Invoke(currentHealth);
+        Debug.Log($"Heal: {amount}  Health: {currentHealth}/{maxHealth}");
+        OnHealthChanged?.Invoke(currentHealth); // notify listeners, such as UIController
 
     }
 
@@ -45,7 +34,8 @@ public class HealthSystem : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        OnHealthChanged?.Invoke(currentHealth);
+        Debug.Log($"Damage: {amount}  Health: {currentHealth}/{maxHealth}");
+        OnHealthChanged?.Invoke(currentHealth); // notify listeners, such as UIController
 
         if(currentHealth <= 0 && !isDead)
         {

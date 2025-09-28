@@ -21,29 +21,19 @@ public class UIController : MonoBehaviour
 
     [Header("Message Bar")]
     [SerializeField] private HUDMessageUI hud; // Ref to UI MessagePanel
+    [SerializeField] private bool playOnStart = true; // play Tutorial when scene loads
+    [SerializeField] private MessageItem[] startMessages; // tutorial sequence in Inspector
 
-    // Start tutorial text - fill in Inspector
-    [Header("Start Tutorial (inline)")]
-    [SerializeField] private bool playOnStart = true;     // click to auto-play when scene loads
-    [SerializeField] private MessageItem[] startMessages; // fill text and display in inspector
-
-    // Auto-messages
-    [Header("Auto-messages")]
-    [Tooltip("Show a hint when health % falls under this value (0.25 = 25%).")]
+    [Header("Low Health")]
     [Range(0.05f, 0.9f)]
-    [SerializeField] private float lowHealthThreshold = 0.25f;
+    [SerializeField] float lowHealthThreshold = 0.25f;
+    [SerializeField] float lowHealthCooldown = 12f;
+    [SerializeField] string lowHealthText = "Critical health! Find a charge point.";
+    [SerializeField] float lowHealthDisplaySeconds = 2.5f;
 
-    [Tooltip("Seconds to wait before showing the low-health message again.")]
-    [SerializeField] private float lowHealthCooldown = 12f;
-
-    [Tooltip("Low-health hint text.")]
-    [SerializeField] private string lowHealthText = "Critical health! Find a charge point.";
-
-    [SerializeField] private float lowHealthDisplaySeconds = 2.5f;
-
-    [Tooltip("Message when the player dies.")]
-    [SerializeField] private string deathMsgText = "YOU DIED";
-    [SerializeField] private float deathMsgSeconds = 3.0f;
+    [Header("Death")]
+    [SerializeField] string deathMsgText = "YOU DIED";
+    [SerializeField] float deathMsgSeconds = 3f;
 
 
 
@@ -72,8 +62,6 @@ public class UIController : MonoBehaviour
 
     private void DisplayDeathScreen()
     {
-        Debug.Log("Player has Died");
-        // Show a death message on the bottom bar
         if(hud) hud.ShowAuto(deathMsgText, deathMsgSeconds);
     }
 
@@ -85,24 +73,32 @@ public class UIController : MonoBehaviour
 
 
     // Vignette screen based on damage taken
-    private void ChangeDamageEffect()
+    void ChangeDamageEffect()
     {
-        Volume volume = FindFirstObjectByType<Volume>();
-
-        // link health with vignette
-        if (volume.profile.TryGet(out Vignette vignette))
+        var volume = FindFirstObjectByType<Volume>(FindObjectsInactive.Include);
+        if (volume && volume.profile && volume.profile.TryGet(out Vignette v))
         {
-            float normalized = healthBar.value / healthBar.maxValue; // returns value between 0 and 1
-            float inverted = 1f - normalized;
-            vignette.intensity.value = inverted * 0.45f;
+            float frac = healthBar.value / healthBar.maxValue;
+            v.intensity.value = (1f - frac) * 0.45f;
         }
     }
 
     private void UpdateHealthSlider(float value)
     {
+        // Update bar + % label
         healthBar.value = value;
         healthPercentText.text = (int)(healthBar.value / healthBar.maxValue * 100) + "%";
-        ChangeDamageEffect(); // spawn blood effect
+
+        // Blood/vignette effect
+        ChangeDamageEffect();
+
+        // Low-health warning (cooldown-gated)
+        float frac = healthBar.value / healthBar.maxValue; // 0..1
+        if (hud && frac <= lowHealthThreshold && Time.unscaledTime >= nextLowHealthTime)
+        {
+            nextLowHealthTime = Time.unscaledTime + lowHealthCooldown;
+            hud.ShowAuto(lowHealthText, lowHealthDisplaySeconds);
+        }
     }
 
     private void SelectShootingStrategy(int index)
