@@ -21,6 +21,6 @@ public class StartMessages : MonoBehaviour
         }
         if (messages == null || messages.Length == 0) return;
 
-        ui.ShowSequenceAuto(this, messages); // auto-show each line then fade
+        ui.ShowSequenceAuto(messages); // auto-show each line then fade
     }
 }

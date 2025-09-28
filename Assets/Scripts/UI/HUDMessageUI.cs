@@ -3,127 +3,100 @@ using UnityEngine;
 using TMPro;
 
 [DisallowMultipleComponent]
+[RequireComponent(typeof(CanvasGroup))] // ensure a CanvasGroup exists on this object
 public class HUDMessageUI : MonoBehaviour
 {
     [Header("UI Refs")]
-    [SerializeField] private CanvasGroup group;      // CanvasGroup on MessagePanel (bottom bar)
-    [SerializeField] private TMP_Text messageText;   // TMP text inside MessagePanel
+    [SerializeField] private CanvasGroup group;    // Ref to CanvasGroup on MessagePanel
+    [SerializeField] private TMP_Text messageText; // Ref to TMP text inside the MessagePanel
 
     [Header("Behaviour")]
-    [SerializeField] private float fadeDuration = 0.25f;           // fade in/out (unscaled time)
-    [SerializeField] private float typewriterCharsPerSecond = 0f;  // 0 = instant; else chars/sec
-    [SerializeField] private bool blockRaycastsWhileVisible = false; // should bar catch clicks?
-    [SerializeField] private GameObject[] hideWhileShowing;        // HUD bits to hide (e.g., crosshair)
+    [SerializeField, Min(0f)] private float fadeDuration = 0.35f; // 0 = instant cut
 
-    [Header("FX")]
-    [SerializeField] private bool flickerOnShow = true; // tiny startup flicker for sci-fi feel
-    [SerializeField] private float flickerSeconds = 0.2f;
-
-    private Coroutine active;   // current running coroutine (single owner)
-    private bool busy;
+    private Coroutine active; // current running coroutine
 
     void Reset()
     {
+        // Auto-wire common refs when the component is first added
         group = GetComponent<CanvasGroup>();
         messageText = GetComponentInChildren<TMP_Text>(true);
     }
 
+    void OnValidate()
+    {
+        // Keep refs wired when editing in Inspector
+        if (!group) group = GetComponent<CanvasGroup>();
+        if (!messageText) messageText = GetComponentInChildren<TMP_Text>(true);
+    }
+
     void Awake()
     {
-        // Start hidden; panel stays active so we can animate alpha
-        if (group)
-        {
-            group.alpha = 0f;
-            group.interactable = false;
-            group.blocksRaycasts = false;
-        }
-        gameObject.SetActive(true);
+        // Start hidden
+        if (!group) group = GetComponent<CanvasGroup>(); // ensure ref exists
+        group.alpha = 0f;
+        group.interactable = false;
+        group.blocksRaycasts = false;
     }
 
-    /// <summary>Show a single auto-dismissing message.</summary>
-    public Coroutine ShowAuto(MonoBehaviour host, string text, float displaySeconds = 2f)
+    void OnDisable()
     {
-        if (host == null) host = this;
-        if (active != null) { StopCoroutine(active); active = null; } // latest message wins
-        active = host.StartCoroutine(CoShowAuto(text, displaySeconds));
-        return active;
-    }
-
-    /// <summary>Show a sequence of auto-dismissing messages.</summary>
-    public Coroutine ShowSequenceAuto(MonoBehaviour host, MessageItem[] items)
-    {
-        if (host == null) host = this;
+        // stop any running coroutines and hide
         if (active != null) { StopCoroutine(active); active = null; }
-        active = host.StartCoroutine(CoShowSequence(items));
-        return active;
+        if (group) group.alpha = 0f;
+        if (messageText) messageText.text = "";
     }
 
-    /// <summary>Cancel current message/sequence immediately.</summary>
+    /// Show a single message.
+    public void ShowAuto(string text, float displaySeconds = 2f)
+    {
+        if (active != null) { StopCoroutine(active); active = null; } // latest message wins
+        active = StartCoroutine(CoShowAuto(text, displaySeconds));
+    }
+
+    /// Show a sequence of messages.
+    public void ShowSequenceAuto(MessageItem[] items)
+    {
+        if (items == null || items.Length == 0) return;
+        if (active != null) { StopCoroutine(active); active = null; }
+        active = StartCoroutine(CoShowSequence(items));
+    }
+
+    /// Cancel current message/sequence immediately.
     public void CancelCurrent()
     {
         if (active != null) { StopCoroutine(active); active = null; }
-        StartCoroutine(FadeTo(0f));
-        SetInteractable(false);
-        ToggleHiddenHud(true);
-        busy = false;
+        StartCoroutine(FadeTo(0f));  // snap/quick hide depending on fadeDuration
+        if (messageText) messageText.text = "";
     }
 
-    IEnumerator CoShowSequence(MessageItem[] items)
+    private IEnumerator CoShowSequence(MessageItem[] items)
     {
-        if (items == null || items.Length == 0) yield break;
         foreach (var m in items)
             yield return CoShowAuto(m.text, Mathf.Max(0.01f, m.displaySeconds));
         active = null;
     }
 
-    IEnumerator CoShowAuto(string text, float seconds)
+    private IEnumerator CoShowAuto(string text, float seconds)
     {
-        busy = true;
-        ToggleHiddenHud(false);   // hide crosshair etc. while showing (optional)
-        SetInteractable(true);    // enable input gating / raycast policy
+        if (!group || !messageText) yield break;
 
-        // Fade in
-        yield return FadeTo(1f);
+        messageText.text = "";            // clear previous line before fade-in
+        yield return FadeTo(1f);          // fade in
+        messageText.text = text;          // set new line
 
-        // Optional micro-flicker for “boot” vibe
-        if (flickerOnShow)
-            yield return Flicker(group, flickerSeconds);
+        // hold on screen (realtime, works even if Time.timeScale = 0)
+        yield return new WaitForSecondsRealtime(Mathf.Max(0f, seconds));
 
-        // Type or set instantly
-        if (typewriterCharsPerSecond > 0f)
-            yield return Typewriter(text);
-        else
-            messageText.text = text;
-
-        // Hold on screen for 'seconds'
-        float tEnd = Time.unscaledTime + seconds;
-        while (Time.unscaledTime < tEnd)
-            yield return null;
-
-        // Fade out and restore HUD
-        yield return FadeTo(0f);
-        SetInteractable(false);
-        ToggleHiddenHud(true);
-        busy = false;
+        yield return FadeTo(0f);          // fade out
+        messageText.text = "";            // clear after fade-out to avoid flashes
+        active = null;
     }
 
-    void SetInteractable(bool on)
-    {
-        if (!group) return;
-        group.interactable = on;
-        group.blocksRaycasts = on && blockRaycastsWhileVisible; // only block if asked
-    }
-
-    void ToggleHiddenHud(bool show)
-    {
-        if (hideWhileShowing == null) return;
-        foreach (var go in hideWhileShowing)
-            if (go) go.SetActive(show);
-    }
-
-    IEnumerator FadeTo(float target)
+    private IEnumerator FadeTo(float target)
     {
         if (!group) yield break;
+        if (fadeDuration <= 0f) { group.alpha = target; yield break; } // instant cut
+
         float start = group.alpha, t = 0f;
         while (t < fadeDuration)
         {
@@ -133,38 +106,11 @@ public class HUDMessageUI : MonoBehaviour
         }
         group.alpha = target;
     }
-
-    IEnumerator Typewriter(string full)
-    {
-        messageText.text = "";
-        float cps = Mathf.Max(1f, typewriterCharsPerSecond);
-        int i = 0;
-        while (i < full.Length)
-        {
-            i = Mathf.Min(full.Length, i + Mathf.CeilToInt(cps * Time.unscaledDeltaTime));
-            messageText.text = full.Substring(0, i);
-            yield return null;
-        }
-    }
-
-    IEnumerator Flicker(CanvasGroup g, float seconds)
-    {
-        if (!g || seconds <= 0f) yield break;
-        float end = Time.unscaledTime + seconds;
-        while (Time.unscaledTime < end)
-        {
-            // subtle alpha noise → CRT/scanline vibe
-            g.alpha = 0.85f + Mathf.PerlinNoise(Time.unscaledTime * 60f, 0f) * 0.15f;
-            yield return null;
-        }
-        g.alpha = 1f;
-    }
 }
 
-/// <summary>One auto message in a sequence.</summary>
 [System.Serializable]
 public struct MessageItem
 {
-    [TextArea] public string text;      // The line to show
-    public float displaySeconds;        // How long to keep it visible before fading
+    [TextArea] public string text;   // The line to show
+    public float displaySeconds;     // How long to keep it visible before fading
 }

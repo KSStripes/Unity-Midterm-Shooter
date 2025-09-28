@@ -67,7 +67,7 @@ public class UIController : MonoBehaviour
 
         // At scene-start, play start sequence
         if (hud && playOnStart && startMessages != null && startMessages.Length > 0)
-            hud.ShowSequenceAuto(this, startMessages);
+            hud.ShowSequenceAuto(startMessages);
     }
 
     private void DisplayDeathScreen()
@@ -77,7 +77,7 @@ public class UIController : MonoBehaviour
         // Show a death message on the bottom bar
         if (hud)
         {
-            hud.ShowAuto(this, deathMsgText, deathMsgSeconds);
+            hud.ShowAuto(deathMsgText, deathMsgSeconds);
         }
     }
 

@@ -22,6 +22,6 @@ public class TriggerHUDMessage : MonoBehaviour
         if (!ui || messages == null || messages.Length == 0) return;
 
         used = true;
-        ui.ShowSequenceAuto(this, messages); // shows each line
+        ui.ShowSequenceAuto(messages); // shows each line
     }
 }

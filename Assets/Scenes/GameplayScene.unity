@@ -3153,6 +3153,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2950771020523363672, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: deathMsgSeconds
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950771020523363672, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: startMessages.Array.data[1].text
+      value: Your goal is to traverse the next 5 rooms to reach the exterior.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950771020523363672, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: startMessages.Array.data[0].displaySeconds
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950771020523363672, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: startMessages.Array.data[2].displaySeconds
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3091446498647067684, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
       propertyPath: m_Name
       value: PlayerHUD
@@ -3163,6 +3179,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3274911949637815088, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991985855066414972, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991985855066414972, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991985855066414972, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991985855066414972, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991985855066414972, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3991985855066414972, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949687365797459194, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949687365797459194, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949687365797459194, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949687365797459194, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949687365797459194, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7949687365797459194, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8530357134308299255, guid: a729695a7a49147a6ab4b2579df20515, type: 3}
