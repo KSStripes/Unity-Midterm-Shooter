@@ -26,8 +26,8 @@ public class UIController : MonoBehaviour
 
     [Header("Low Health")]
     [Range(0.05f, 0.9f)]
-    [SerializeField] float lowHealthThreshold = 0.25f;
-    [SerializeField] float lowHealthCooldown = 12f;
+    [SerializeField] float lowHealthThreshold = 0.25f; // below this fraction = "low health"
+    [SerializeField] float lowHealthCooldown = 12f; // min seconds between warnings
     [SerializeField] string lowHealthText = "Critical health! Find a charge point.";
     [SerializeField] float lowHealthDisplaySeconds = 2.5f;
 
@@ -60,9 +60,10 @@ public class UIController : MonoBehaviour
             hud.ShowSequenceAuto(startMessages);
     }
 
+    // Show death message in UI, activated by HealthSystem
     private void DisplayDeathScreen()
     {
-        if(hud) hud.ShowAuto(deathMsgText, deathMsgSeconds);
+        if (hud) hud.ShowAuto(deathMsgText, deathMsgSeconds);
     }
 
     // Show game state change message in UI, activated by StateChangeTrigger
@@ -81,7 +82,7 @@ public class UIController : MonoBehaviour
         if (volume && volume.profile && volume.profile.TryGet(out Vignette v))
         {
             float frac = healthBar.value / healthBar.maxValue;
-            v.intensity.value = (1f - frac) * 0.45f;
+            v.intensity.value = (1f - frac) * 0.45f; // higher damage = stronger vignette
         }
     }
 

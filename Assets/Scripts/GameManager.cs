@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
         currentGameState = state;
         OnStateChanged?.Invoke(currentGameState);
 
+        // Log state change
         var printText = GetStateMessage(currentGameState);
         Debug.Log($"[{nameof(GameManager)}] {printText} (State = {currentGameState})", this);
 
@@ -42,15 +43,6 @@ public class GameManager : MonoBehaviour
                 director.Play();
             }
         }
-
-        // Always unfreeze time except during Briefing
-        if (currentGameState != GameState.Briefing)
-        {
-            Time.timeScale = 1f;
-        }
-    
-
-
     }
 
     // Map states to readable messages

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Called from each time the player enters the trigger zone
 [RequireComponent(typeof(BoxCollider))]
 public class TriggerHUDMessage : MonoBehaviour
 {

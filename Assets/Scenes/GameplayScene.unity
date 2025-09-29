@@ -7335,7 +7335,7 @@ PrefabInstance:
       objectReference: {fileID: 862672841}
     - target: {fileID: 4226945437659958521, guid: c2dbee43f49cb452294bbdfccf26d20f, type: 3}
       propertyPath: messageDuration
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4472473193916113413, guid: c2dbee43f49cb452294bbdfccf26d20f, type: 3}
       propertyPath: m_Volume

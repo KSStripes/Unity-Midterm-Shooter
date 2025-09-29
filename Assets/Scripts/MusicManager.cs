@@ -19,6 +19,10 @@ public class MusicManager : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.loop = true;
         source.playOnAwake = false;
+        source.spatialBlend = 0f; // 2D sound
+        source.volume = 0.7f;       // full volume
+        source.mute = false;      // ensure not muted
+
         DontDestroyOnLoad(gameObject);
     }
 
@@ -40,7 +44,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
-    private void OnGameStateChanged(GameState state)
+    public void OnGameStateChanged(GameState state)
     {
         AudioClip clip = null;
         switch (state)

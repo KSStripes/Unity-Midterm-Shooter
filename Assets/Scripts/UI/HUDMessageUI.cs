@@ -61,11 +61,11 @@ public class HUDMessageUI : MonoBehaviour
         active = StartCoroutine(CoShowSequence(items));
     }
 
-    /// Cancel current message/sequence immediately.
+    /// Cancel current message sequence immediately.
     public void CancelCurrent()
     {
         if (active != null) { StopCoroutine(active); active = null; }
-        StartCoroutine(FadeTo(0f));  // snap/quick hide depending on fadeDuration
+        StartCoroutine(FadeTo(0f));  // hide depending on fadeDuration
         if (messageText) messageText.text = "";
     }
 
@@ -80,15 +80,15 @@ public class HUDMessageUI : MonoBehaviour
     {
         if (!group || !messageText) yield break;
 
-        messageText.text = "";            // clear previous line before fade-in
-        yield return FadeTo(1f);          // fade in
-        messageText.text = text;          // set new line
+        messageText.text = "";  // clear previous line before fade-in
+        yield return FadeTo(1f);  // fade in
+        messageText.text = text; // set new line
 
-        // hold on screen (realtime, works even if Time.timeScale = 0)
+        // hold on screen for a bit
         yield return new WaitForSecondsRealtime(Mathf.Max(0f, seconds));
 
-        yield return FadeTo(0f);          // fade out
-        messageText.text = "";            // clear after fade-out to avoid flashes
+        yield return FadeTo(0f); // fade out
+        messageText.text = ""; // clear after fade-out
         active = null;
     }
 
@@ -112,5 +112,5 @@ public class HUDMessageUI : MonoBehaviour
 public struct MessageItem
 {
     [TextArea] public string text;   // The line to show
-    public float displaySeconds;     // How long to keep it visible before fading
+    public float displaySeconds;  // How long to keep it visible before fading
 }
