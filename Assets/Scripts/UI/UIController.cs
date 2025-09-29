@@ -117,4 +117,11 @@ public class UIController : MonoBehaviour
             rocketEnabled.SetActive(false);
         }
     }
+
+    // API to show a hint message, called from TriggerHUDMessage
+    public void ShowHint(string text, float seconds = 1.8f)
+    {
+        if (hud) hud.ShowAuto(text, seconds);
+    }
+
 }

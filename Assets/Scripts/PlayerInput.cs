@@ -42,10 +42,15 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
-        // Disable player controls during briefing, game over, or game win for cinematics
-        if (GameManager.Instance.CurrentGameState == GameState.Briefing) return;
-        if (GameManager.Instance.CurrentGameState == GameState.GameOver) return;
-        if (GameManager.Instance.CurrentGameState == GameState.GameWin) return;
+           // If GameManager not present (e.g., playground/test scenes), skip game-state checks.
+            if (GameManager.Instance != null)
+            {
+                // Ignore input during briefing, game over, or game win states
+                var state = GameManager.Instance.CurrentGameState;
+                if (state == GameState.Briefing) return;
+                if (state == GameState.GameOver) return;
+                if (state == GameState.GameWin) return;
+            }
 
 
         if (lookAbility != null)
