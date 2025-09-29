@@ -30,6 +30,7 @@ public class MusicManager : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnStateChanged += OnGameStateChanged;
+            OnGameStateChanged(GameManager.Instance.CurrentGameState); // Set initial music
         }
     }
 
@@ -46,7 +47,6 @@ public class MusicManager : MonoBehaviour
         AudioClip clip = null;
         switch (state)
         {
-            case GameState.Level_0: clip = level0Music; break;
             case GameState.Level_1: clip = level1Music; break;
             case GameState.Level_2: clip = level2Music; break;
             case GameState.Level_3: clip = level3Music; break;

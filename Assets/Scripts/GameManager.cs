@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
         else { Debug.LogWarning("[GameManager] Duplicate destroyed", this); Destroy(gameObject); return; }
-        Debug.Log("[GameManager] Awake – I am the active instance", this);
     }
 
 
@@ -37,7 +36,6 @@ public class GameManager : MonoBehaviour
     private static readonly Dictionary<GameState, string> StateMessages = new()
     {
         { GameState.Briefing, "Briefing started." },
-        { GameState.Level_0, "Tutorial started (Level 0)." },
         { GameState.Level_1, "You have reached Level 1." },
         { GameState.Level_2, "You have reached Level 2." },
         { GameState.Level_3, "You have reached Level 3." },
@@ -52,8 +50,8 @@ public class GameManager : MonoBehaviour
 
     public void FinishIntroCutscene()
     {
-        //Debug.Log("[GameManager] FinishIntroCutscene() signal RECEIVED", this);
-        ChangeState(GameState.Level_0);
+        Debug.Log("[GameManager] FinishIntroCutscene() signal RECEIVED", this);
+        ChangeState(GameState.Level_1);
     }
 
 }
@@ -62,7 +60,6 @@ public class GameManager : MonoBehaviour
 public enum GameState
 {
     Briefing, // Intro Cutscene
-    Level_0, // Tutorial level
     Level_1,
     Level_2,
     Level_3,

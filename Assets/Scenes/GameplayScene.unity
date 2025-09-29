@@ -4205,7 +4205,7 @@ GameObject:
   m_Icon: {fileID: 2800000, guid: 9494e5b136d34c74f96fb0df4a7b9a77, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1201563062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4218,14 +4218,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9e9c7ab33994410b171e2f4060e33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level0Music: {fileID: 8300000, guid: ef8c398a5c654454da77f4fce57d23de, type: 3}
-  level1Music: {fileID: 0}
-  level2Music: {fileID: 0}
-  level3Music: {fileID: 0}
-  level4Music: {fileID: 0}
-  level5Music: {fileID: 0}
-  gameOverMusic: {fileID: 0}
-  gameWinMusic: {fileID: 0}
+  level0Music: {fileID: 8300000, guid: 7dc61e61284f74e44a0ff7dc4d0833d8, type: 3}
+  level1Music: {fileID: 8300000, guid: ef8c398a5c654454da77f4fce57d23de, type: 3}
+  level2Music: {fileID: 8300000, guid: 116a310f99b372b45acb109038ed060d, type: 3}
+  level3Music: {fileID: 8300000, guid: d0d67c772fb13dd4ca9603a873cc0102, type: 3}
+  level4Music: {fileID: 8300000, guid: 18bb59ea8f931471885852c709e5940e, type: 3}
+  level5Music: {fileID: 8300000, guid: 18bb59ea8f931471885852c709e5940e, type: 3}
+  gameOverMusic: {fileID: 8300000, guid: 158ceaa6c19294d5e807cb5dec2e382a, type: 3}
+  gameWinMusic: {fileID: 8300000, guid: 1d69f1a851676437aa8d68410c081e5a, type: 3}
 --- !u!82 &1201563063
 AudioSource:
   m_ObjectHideFlags: 0
