@@ -19,8 +19,6 @@ public class MusicManager : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.loop = true;
         source.playOnAwake = false;
-
-        // keep music across scene loads if you want
         DontDestroyOnLoad(gameObject);
     }
 
@@ -29,7 +27,8 @@ public class MusicManager : MonoBehaviour
         if (GameManager.Instance != null)
         {
             GameManager.Instance.OnStateChanged += OnGameStateChanged;
-            OnGameStateChanged(GameManager.Instance.CurrentGameState); // Set initial music
+            // start with current state music
+            OnGameStateChanged(GameManager.Instance.CurrentGameState);
         }
     }
 
@@ -59,6 +58,7 @@ public class MusicManager : MonoBehaviour
         {
             source.clip = clip;
             source.Play();
+            Debug.Log($"[MusicManager] Now playing: {clip.name}");
         }
     }
 }

@@ -27,11 +27,10 @@ public class GameManager : MonoBehaviour
         currentGameState = state;
         OnStateChanged?.Invoke(currentGameState);
 
-        // PrintText + raw enum, with context so Console shows this component/script
         var printText = GetStateMessage(currentGameState);
         Debug.Log($"[{nameof(GameManager)}] {printText} (State = {currentGameState})", this);
 
-        // HWhen GameWin, hook up cinematics
+        // When GameWin, hook up cinematics
         if (currentGameState == GameState.GameWin && winCinematic != null)
         {
             winCinematic.SetActive(true);
@@ -39,10 +38,18 @@ public class GameManager : MonoBehaviour
             var director = winCinematic.GetComponent<UnityEngine.Playables.PlayableDirector>();
             if (director != null)
             {
-                director.time = 0; // rewind
-                director.Play();   // start Timeline
+                director.time = 0;
+                director.Play();
             }
         }
+
+        // Always unfreeze time except during Briefing
+        if (currentGameState != GameState.Briefing)
+        {
+            Time.timeScale = 1f;
+        }
+    
+
 
     }
 

@@ -775,6 +775,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4235566955999968, guid: ea4fb55d0227e604386f44f905cfe7c0, type: 3}
   m_PrefabInstance: {fileID: 598235472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &136479477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136479478}
+  m_Layer: 0
+  m_Name: Cinematics
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &136479478
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136479477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 75.01877, y: 4.3875732, z: 81.57438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1068876690}
+  - {fileID: 2072689118}
+  - {fileID: 996291150}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &138183484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1606,7 +1640,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 515572492}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &515572496
 Camera:
   m_ObjectHideFlags: 0
@@ -2476,7 +2510,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 678660213}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &678660217
 Camera:
   m_ObjectHideFlags: 0
@@ -3756,12 +3790,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 996291147}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 78.75664, y: -15.815491, z: 82.54768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.7378693, y: -20.203064, z: 0.97330475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 136479478}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1020564976 stripped
 Transform:
@@ -3820,13 +3854,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068876687}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -75.01877, y: -4.3875732, z: -81.57438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 678660218}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 136479478}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1083999290 stripped
 Transform:
@@ -4410,12 +4444,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level1Music: {fileID: 8300000, guid: ef8c398a5c654454da77f4fce57d23de, type: 3}
-  level2Music: {fileID: 8300000, guid: 116a310f99b372b45acb109038ed060d, type: 3}
-  level3Music: {fileID: 8300000, guid: d0d67c772fb13dd4ca9603a873cc0102, type: 3}
+  level2Music: {fileID: 8300000, guid: 29e3949474bf94aefb120ff6bad483ec, type: 3}
+  level3Music: {fileID: 8300000, guid: e9099961b60f4f34c8364e9ee6e0a518, type: 3}
   level4Music: {fileID: 8300000, guid: 18bb59ea8f931471885852c709e5940e, type: 3}
   level5Music: {fileID: 8300000, guid: 18bb59ea8f931471885852c709e5940e, type: 3}
-  gameOverMusic: {fileID: 8300000, guid: 158ceaa6c19294d5e807cb5dec2e382a, type: 3}
-  gameWinMusic: {fileID: 8300000, guid: 1d69f1a851676437aa8d68410c081e5a, type: 3}
+  gameOverMusic: {fileID: 8300000, guid: 8a292a8038c0f4564be27b32a61be646, type: 3}
+  gameWinMusic: {fileID: 8300000, guid: bae32f80a37ed4ef3b49a6b521183567, type: 3}
 --- !u!82 &1201563063
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4429,8 +4463,8 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.495
-  m_Pitch: 1
+  m_Volume: 0.668
+  m_Pitch: 0.1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -6698,13 +6732,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2072689115}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.389, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -71.62977, y: -4.3875732, z: -81.57438}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 515572497}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 136479478}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2078868872 stripped
 Transform:
@@ -7288,6 +7322,10 @@ PrefabInstance:
       value: Level1Trigger
       objectReference: {fileID: 0}
     - target: {fileID: 4226945437659958521, guid: c2dbee43f49cb452294bbdfccf26d20f, type: 3}
+      propertyPath: musicClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ef8c398a5c654454da77f4fce57d23de, type: 3}
+    - target: {fileID: 4226945437659958521, guid: c2dbee43f49cb452294bbdfccf26d20f, type: 3}
       propertyPath: newGameState
       value: 1
       objectReference: {fileID: 0}
@@ -7297,7 +7335,11 @@ PrefabInstance:
       objectReference: {fileID: 862672841}
     - target: {fileID: 4226945437659958521, guid: c2dbee43f49cb452294bbdfccf26d20f, type: 3}
       propertyPath: messageDuration
-      value: 4
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472473193916113413, guid: c2dbee43f49cb452294bbdfccf26d20f, type: 3}
+      propertyPath: m_Volume
+      value: 0.504
       objectReference: {fileID: 0}
     - target: {fileID: 8062020386187711509, guid: c2dbee43f49cb452294bbdfccf26d20f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7543,6 +7585,7 @@ SceneRoots:
   - {fileID: 1147499944}
   - {fileID: 1749717458}
   - {fileID: 1201563064}
+  - {fileID: 136479478}
   - {fileID: 564289888}
   - {fileID: 1567097015}
   - {fileID: 2137438620}
@@ -7551,6 +7594,3 @@ SceneRoots:
   - {fileID: 1765606952}
   - {fileID: 2047261803}
   - {fileID: 543453498}
-  - {fileID: 1068876690}
-  - {fileID: 2072689118}
-  - {fileID: 996291150}
