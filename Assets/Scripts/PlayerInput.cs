@@ -42,6 +42,12 @@ public class PlayerInput : MonoBehaviour
 
     void Update()
     {
+        // Disable player controls during briefing, game over, or game win for cinematics
+        if (GameManager.Instance.CurrentGameState == GameState.Briefing) return;
+        if (GameManager.Instance.CurrentGameState == GameState.GameOver) return;
+        if (GameManager.Instance.CurrentGameState == GameState.GameWin) return;
+
+
         if (lookAbility != null)
         {
             lookDirection.x += Input.GetAxis("Mouse X") * Time.deltaTime * mouseSens;
