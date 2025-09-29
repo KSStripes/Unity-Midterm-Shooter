@@ -4,7 +4,6 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     [Header("Music Clips")]
-    [SerializeField] private AudioClip level0Music;
     [SerializeField] private AudioClip level1Music;
     [SerializeField] private AudioClip level2Music;
     [SerializeField] private AudioClip level3Music;

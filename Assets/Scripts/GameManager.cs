@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;// Singleton instance
     [SerializeField] private GameState currentGameState = GameState.Briefing; // Initialize GameState in Inspector
-    //public GameState currentGameState { get; private set; }
+    [SerializeField] private GameObject winCinematic; // Assign GameWin cinematic
     public Action<GameState> OnStateChanged; // Event listener for state changes
     public GameState CurrentGameState => currentGameState; // Public getter
 
@@ -30,6 +30,20 @@ public class GameManager : MonoBehaviour
         // PrintText + raw enum, with context so Console shows this component/script
         var printText = GetStateMessage(currentGameState);
         Debug.Log($"[{nameof(GameManager)}] {printText} (State = {currentGameState})", this);
+
+        // HWhen GameWin, hook up cinematics
+        if (currentGameState == GameState.GameWin && winCinematic != null)
+        {
+            winCinematic.SetActive(true);
+
+            var director = winCinematic.GetComponent<UnityEngine.Playables.PlayableDirector>();
+            if (director != null)
+            {
+                director.time = 0; // rewind
+                director.Play();   // start Timeline
+            }
+        }
+
     }
 
     // Map states to readable messages
