@@ -32,7 +32,7 @@ public class UIController : MonoBehaviour
     [SerializeField] float lowHealthDisplaySeconds = 2.5f;
 
     [Header("Death")]
-    [SerializeField] string deathMsgText = "YOU DIED";
+    [SerializeField] string deathMsgText = "YOU HAVE DIED";
     [SerializeField] float deathMsgSeconds = 3f;
 
 
@@ -68,7 +68,9 @@ public class UIController : MonoBehaviour
     // Show game state change message in UI, activated by StateChangeTrigger
     public void ShowStateChangeUI(GameState state, float seconds = 1.8f)
     {
-        if(hud) hud.ShowAuto($"Entering {state}", seconds);
+        string msg = GameManager.GetStateMessage(state);
+
+        if (hud) hud.ShowAuto(msg, seconds);
     }
 
 

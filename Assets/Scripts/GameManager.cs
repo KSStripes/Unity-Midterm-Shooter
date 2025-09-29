@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 // Singleton GameManager to track and manage game state
@@ -26,13 +27,31 @@ public class GameManager : MonoBehaviour
     // Change the current game state
     public void ChangeState(GameState state)
     {
-        if (currentGameState != state)
-        {
-            currentGameState = state;
-            OnStateChanged?.Invoke(currentGameState); // Notify event listeners
-            Debug.Log("Game State changed to: " + currentGameState);
-        }
+        if (currentGameState == state) return;
+
+        currentGameState = state;
+        OnStateChanged?.Invoke(currentGameState);
+
+        // PrintText + raw enum, with context so Console shows this component/script
+        var printText = GetStateMessage(currentGameState);
+        Debug.Log($"[{nameof(GameManager)}] {printText} (State = {currentGameState})", this);
     }
+
+    // Map states to readable messages
+    private static readonly Dictionary<GameState, string> StateMessages = new()
+    {
+        { GameState.Briefing, "Briefing started." },
+        { GameState.Level_1, "You have reached Level 1." },
+        { GameState.Level_2, "You have reached Level 2." },
+        { GameState.Level_3, "You have reached Level 3." },
+        { GameState.Level_4, "You have reached Level 4." },
+        { GameState.Level_5, "You have reached Level 5." },
+        { GameState.GameOver, "You have lost!" },
+        { GameState.GameWin, "You have won!" },
+    };
+
+    public static string GetStateMessage(GameState state)
+        => StateMessages.TryGetValue(state, out var msg) ? msg : $"State changed to {state}.";
 }
 
 // Enum for all possible game states
