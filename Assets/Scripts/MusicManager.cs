@@ -1,8 +1,12 @@
 using UnityEngine;
 
+// Handles background music switching based on game state
+// Handles background music switching based on game state
 [RequireComponent(typeof(AudioSource))]
 public class MusicManager : MonoBehaviour
 {
+    [SerializeField] private float fadeDuration = 1f; // Duration for fade in/out
+    private Coroutine fadeCoroutine;
     [Header("Music Clips")]
     [SerializeField] private AudioClip level1Music;
     [SerializeField] private AudioClip level2Music;
@@ -19,8 +23,6 @@ public class MusicManager : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.loop = true;
         source.playOnAwake = false;
-        source.spatialBlend = 0f; // 2D sound
-        source.volume = 0.7f;       // full volume
         source.mute = false;      // ensure not muted
 
         DontDestroyOnLoad(gameObject);
@@ -44,6 +46,7 @@ public class MusicManager : MonoBehaviour
         }
     }
 
+    // Switch music based on game state
     public void OnGameStateChanged(GameState state)
     {
         AudioClip clip = null;
@@ -60,9 +63,33 @@ public class MusicManager : MonoBehaviour
 
         if (clip != null && source.clip != clip)
         {
-            source.clip = clip;
-            source.Play();
+            if (fadeCoroutine != null)
+                StopCoroutine(fadeCoroutine);
+            fadeCoroutine = StartCoroutine(FadeOutIn(clip));
             Debug.Log($"[MusicManager] Now playing: {clip.name}");
         }
+    }
+
+    // Coroutine to fade out current track, switch, then fade in new track
+    private System.Collections.IEnumerator FadeOutIn(AudioClip newClip)
+    {
+        float startVolume = source.volume;
+        // Fade out
+        for (float t = 0; t < fadeDuration; t += Time.unscaledDeltaTime)
+        {
+            source.volume = Mathf.Lerp(startVolume, 0f, t / fadeDuration);
+            yield return null;
+        }
+        source.volume = 0f;
+        source.Stop();
+        source.clip = newClip;
+        source.Play();
+        // Fade in
+        for (float t = 0; t < fadeDuration; t += Time.unscaledDeltaTime)
+        {
+            source.volume = Mathf.Lerp(0f, startVolume, t / fadeDuration);
+            yield return null;
+        }
+        source.volume = startVolume;
     }
 }

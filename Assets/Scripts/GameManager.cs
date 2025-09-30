@@ -11,6 +11,14 @@ public class GameManager : MonoBehaviour
     public Action<GameState> OnStateChanged; // Event listener for state changes
     public GameState CurrentGameState => currentGameState; // Public getter
 
+    [Header("Respawn Settings")]
+    public Transform lvl1Res;
+    public Transform lvl2Res;
+    public Transform lvl3Res;
+    public Transform lvl4Res;
+    public Transform lvl5Res;
+
+
     private void Awake()
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Command to move companion to a target position
 public class MoveCommand : Command
 {
     private Vector3 target;
@@ -18,7 +19,7 @@ public class MoveCommand : Command
     {
         return Vector3.Distance(target, companionController.transform.position) < 1f;
     }
-    
+
     public MoveCommand(Vector3 target)
     {
         this.target = target;

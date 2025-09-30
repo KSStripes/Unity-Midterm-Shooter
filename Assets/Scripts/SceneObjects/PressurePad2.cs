@@ -1,5 +1,5 @@
 // PressurePad.cs — detects cube on pad, lights green, notifies DoorController.
-// Patterns: SRP (pad only detects & reports), Observer-ish (pad -> controller callback).
+// Patterns: SRP (pad only detects & reports), Observer (pad -> controller callback).
 
 using UnityEngine;
 

@@ -2,8 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-// implementation of the command pattern for the companion character
-
+// Handles command queue and movement for companion character
 public class CompanionController : MonoBehaviour
 {
     [SerializeField] private Queue<Command> commandQueue = new Queue<Command>();
@@ -18,20 +17,18 @@ public class CompanionController : MonoBehaviour
 
     private void Update()
     {
+        // Execute and finish commands in queue
         if (commandQueue.Count > 0)
         {
-            //Debug.Log("commands in queue: " + commandQueue.Count);
             commandQueue.Peek().Execute();
             if (commandQueue.Peek().IsCommandComplete())
             {
-                //Debug.Log("command complete, ending");
                 FinishCommand();
             }
         }
-
+        // Update animation based on movement
         anim.SetFloat("Velocity", agent.velocity.sqrMagnitude);
     }
-
 
     public void GiveCommand(Command newCommand)
     {

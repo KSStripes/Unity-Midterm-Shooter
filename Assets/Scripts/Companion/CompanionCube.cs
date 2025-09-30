@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Implements pickup/drop logic for companion cube
 public class CompanionCube : MonoBehaviour, IPickupable
 {
     private Rigidbody rb;
@@ -22,7 +23,7 @@ public class CompanionCube : MonoBehaviour, IPickupable
         transform.rotation = attachPoint.rotation;
         transform.SetParent(attachPoint);
 
-        rb.isKinematic=true;
-        rb.useGravity=false;
+        rb.isKinematic = true;
+        rb.useGravity = false;
     }
 }

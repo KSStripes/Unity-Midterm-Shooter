@@ -1,5 +1,4 @@
 // DoorController.cs — requires 2 pads; opens door + handles NavMeshObstacle carving.
-// Input: your provided controller, simplified to pad-driven logic.
 
 using UnityEngine;
 using UnityEngine.AI;
