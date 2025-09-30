@@ -37,10 +37,12 @@ public class HealthSystem : MonoBehaviour
         Debug.Log($"Damage: {amount}  Health: {currentHealth}/{maxHealth}");
         OnHealthChanged?.Invoke(currentHealth); // notify listeners, such as UIController
 
-        if(currentHealth <= 0 && !isDead)
+        if (currentHealth <= 0 && !isDead)
         {
             isDead = true;
             OnDeath?.Invoke();
+            // Respawn player handled by GameManager
+            GameManager.Instance.RespawnPlayer(transform, this);
         }
     }
 }
