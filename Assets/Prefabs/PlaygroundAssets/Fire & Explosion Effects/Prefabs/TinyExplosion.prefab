@@ -9857,7 +9857,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced066f4e5fec4aee9079bfd45823c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 6
+  radius: 7
   maxDamage: 15
   playerTag: Player
 --- !u!1 &1793989332680384

@@ -340,9 +340,9 @@ GameObject:
   - component: {fileID: 9053451980008241017}
   - component: {fileID: 2334378232808632523}
   - component: {fileID: 2781471829935421233}
-  - component: {fileID: 8351196404862889597}
+  - component: {fileID: 5204196926544546452}
   m_Layer: 0
-  m_Name: PressurePlate (1)
+  m_Name: PressurePlate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -440,7 +440,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8351196404862889597
+--- !u!114 &5204196926544546452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -449,18 +449,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2097595403921156828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9717dea208774334b52824e99fd5c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 10d7dfbddb5ee46ac899531f97f1d799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 0.5
   cubeLayer:
     serializedVersion: 2
     m_Bits: 12288
-  doorAnimator: {fileID: 3920980303374360865}
-  doorOpenParam: DoorOpen
-  doorLight: {fileID: 7376707391293630473}
-  doorOnMat: {fileID: 2100000, guid: 99bc34f5c56e5484386e7e2ef24a89ef, type: 2}
-  doorOffMat: {fileID: 2100000, guid: e4226f58b8a264c88973f61c34d6662f, type: 2}
+  padLightOrDoorLight: {fileID: 7376707391293630473}
+  onMat: {fileID: 2100000, guid: 99bc34f5c56e5484386e7e2ef24a89ef, type: 2}
+  offMat: {fileID: 2100000, guid: e4226f58b8a264c88973f61c34d6662f, type: 2}
+  controller: {fileID: 8902618499229288960}
+  padIndex: 1
 --- !u!1 &4258550337904262260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1012,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2173888941665399187}
   - component: {fileID: 3920980303374360865}
+  - component: {fileID: 8902618499229288960}
   m_Layer: 0
   m_Name: PressureDoor 1
   m_TagString: Untagged
@@ -1064,6 +1065,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8902618499229288960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6169046400776067697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc4eae6a4ce8a4602861be055ab63d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doorAnimator: {fileID: 3920980303374360865}
+  doorOpenParam: DoorOpen
+  doorStartsOpen: 0
 --- !u!1 &7442242909811031710
 GameObject:
   m_ObjectHideFlags: 0
@@ -1292,9 +1308,9 @@ GameObject:
   - component: {fileID: 6092655431536998923}
   - component: {fileID: 7041925492805850873}
   - component: {fileID: 3632480064368853179}
-  - component: {fileID: 6700337563030103803}
+  - component: {fileID: 5281291230087911737}
   m_Layer: 0
-  m_Name: PressurePlate (2)
+  m_Name: PressurePlate (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1392,7 +1408,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6700337563030103803
+--- !u!114 &5281291230087911737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1401,18 +1417,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 7811309016794687009}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9717dea208774334b52824e99fd5c7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 10d7dfbddb5ee46ac899531f97f1d799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   detectionRadius: 0.5
   cubeLayer:
     serializedVersion: 2
     m_Bits: 12288
-  doorAnimator: {fileID: 3920980303374360865}
-  doorOpenParam: DoorOpen
-  doorLight: {fileID: 7376707391293630473}
-  doorOnMat: {fileID: 2100000, guid: 99bc34f5c56e5484386e7e2ef24a89ef, type: 2}
-  doorOffMat: {fileID: 2100000, guid: e4226f58b8a264c88973f61c34d6662f, type: 2}
+  padLightOrDoorLight: {fileID: 3691047744317764731}
+  onMat: {fileID: 2100000, guid: 99bc34f5c56e5484386e7e2ef24a89ef, type: 2}
+  offMat: {fileID: 2100000, guid: e4226f58b8a264c88973f61c34d6662f, type: 2}
+  controller: {fileID: 8902618499229288960}
+  padIndex: 2
 --- !u!1 &7942840812423668009
 GameObject:
   m_ObjectHideFlags: 0

@@ -6340,7 +6340,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6997802818654109, guid: 58cc3f58ccb0b4888a72f9f9bee267e1, type: 3}
       propertyPath: messages.Array.data[0].text
-      value: This machine restores 30 Health.
+      value: This machine restores 30 Health every 30 seconds.
       objectReference: {fileID: 0}
     - target: {fileID: 6997802818654109, guid: 58cc3f58ccb0b4888a72f9f9bee267e1, type: 3}
       propertyPath: messages.Array.data[1].text
